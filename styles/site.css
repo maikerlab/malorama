@@ -1,0 +1,13 @@
+
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: rgba(14, 14, 14, 0.71);
+    transition: all 0.2s;
+}
