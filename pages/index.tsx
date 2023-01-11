@@ -5,8 +5,9 @@ import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 import PostPreview from "../components/PostPreview";
+import { GetStaticProps } from "next";
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const files = fs.readdirSync(path.join("posts"));
   const posts = files.map((filename) => {
     const markdownWithMeta = fs.readFileSync(

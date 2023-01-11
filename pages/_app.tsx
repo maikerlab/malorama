@@ -5,13 +5,16 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../styles/site.css";
 import "../styles/flatly.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-
+import { AppProps } from "next/app";
+import { Component } from "react";
 import { useEffect } from "react";
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle");
   }, []);
+
+  /* return <Component {...pageProps} />; */
 
   return (
     <>
