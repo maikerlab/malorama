@@ -4,7 +4,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
-import PostPreview from "../components/PostPreview";
+import PostPreview from "src/components/PostPreview";
 import { GetStaticProps } from "next";
 
 export const getStaticProps: GetStaticProps = async () => {
