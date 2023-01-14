@@ -1,23 +1,24 @@
 ---
-title: Functions for Beginners
-date: 'August 4, 2021'
-description: Learn how to create and use functions
-thumbnailUrl: '/javascript-functions-thumbnail.jpeg'
-tags: ['functions', 'javascript']
+title: Introduction to MDX
+date: "January 11, 2023"
+description: Create your own Blog using Next.js and the power of MDX files
+thumbnailUrl: "/next.svg"
+tags: ["blog", "mdx"]
 ---
 
 <div>
-    This is a blog post about <strong>functions</strong>. <br/>
-    We'll learn what functions are, how to write functions, and how to use them.
+  This is a blog post about <strong>MDX</strong>. <br />
+  We'll learn what MDX is and how to use it for creating a blog.
 </div>
 
-<br/>
+<br />
 
 ### This is a Markdown sub-heading
+
 We just used a `###` subheading in our blog post.
 
 <SyntaxHighlighter language="javascript">
-    {`
+  {`
     const doStuff = () => {
       return console.log('hey')
     }
@@ -25,7 +26,7 @@ We just used a `###` subheading in our blog post.
 </SyntaxHighlighter>
 
 <SyntaxHighlighter language="kotlin">
-    {`
+  {`
     fun getMenu() {
         val menus = await http.get('localhost:8080')
         if(menus.isEmpty) {
@@ -47,4 +48,7 @@ We just used a `###` subheading in our blog post.
   }
 ```
 
-<div>Here, I'm using a component inside my MarkDown file: {<Button text={"Click me"}/>}</div>
+<div>
+  Here, I'm using a component inside my MarkDown file:{" "}
+  {<Button text={"Click me"} />}
+</div>

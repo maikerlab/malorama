@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function PostPreview({ post }) {
   return (
-    <Link href={"/blog/" + post.slug}>
-      <div className="card mb-3" style={{ maxWidth: "540px" }}>
+    <div className="card mb-3 p-2">
+      <Link href={"/blog/" + post.slug}>
         <div className="row g-0">
           <div className="col-md-8">
             <div className="card-body">
@@ -24,7 +24,7 @@ export default function PostPreview({ post }) {
           <div className="col-md-4 m-auto">
             <Image
               src={post.frontMatter.thumbnailUrl}
-              className="img-fluid mt-1 rounded-start"
+              className="img-fluid mt-1 rounded"
               alt="thumbnail"
               width={500}
               height={400}
@@ -32,7 +32,7 @@ export default function PostPreview({ post }) {
             />
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 }

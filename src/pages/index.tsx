@@ -31,9 +31,11 @@ export const getStaticProps: GetStaticProps = async () => {
 
 export default function Home({ posts }) {
   return (
-    <div className="mt-5">
+    <div className="mt-5 row row-cols-1 row-cols-lg-2">
       {posts.map((post, index) => (
-        <PostPreview post={post} key={index} />
+        <div className="col">
+          <PostPreview post={post} key={index} />
+        </div>
       ))}
     </div>
   );

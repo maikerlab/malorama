@@ -4,7 +4,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import Button from "src/components/Button";
+import Button from "@src/components/Button";
 import { GetStaticPaths } from "next";
 
 export const getStaticPaths: GetStaticPaths = async () => {

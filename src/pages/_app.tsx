@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Nav from "src/components/Nav";
+import Nav from "@components/Nav";
 import "bootstrap/dist/css/bootstrap.css";
 //import "styles/globals.css";
 import "styles/site.css";
@@ -7,6 +7,7 @@ import "styles/flatly.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { AppProps } from "next/app";
 import { useEffect } from "react";
+import BlogPosts from "@src/sections/header/BlogPosts";
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {

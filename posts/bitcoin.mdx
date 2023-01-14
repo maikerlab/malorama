@@ -1,0 +1,182 @@
+---
+title: Contributing to Bitcoin Open-Source Software
+status: published
+date: "October 10, 2022"
+description: My personal experience while making my first steps in figuring out how to contribute to the Lightning Network.
+thumbnailUrl: "/open-source.jpeg"
+tags: ["lightning-network", "bitcoin", "python"]
+---
+
+_This essay was written for the "Bitcoin Bounties" during the [Des Femmes 2022 Mentorship Program](https://desfemmesmagazine.com/blogs/latest-updates/mentorship-program)_
+
+In this essay I would like to tell about my experience in taking the first steps in learning how to contribute to Open-Source software in the Bitcoin Space, more precisely: the Lightning Network.
+
+The Lightning Network is a second-layer technology, which brings scalability and many more functionalities to the Bitcoin space. Like Bitcoin Core, it is also an open protocol, which is defined by so-called **BOLT**s (Basis of Lightning Technology). An overview of existing BOLTs can be found [here](https://github.com/lightning/bolts/blob/master/00-introduction.md).
+
+There are [several implementations](https://medium.com/@fulgur.ventures/an-overview-of-lightning-network-implementations-d670255a6cfa) of the protocol available, but in this essay I will focus on [Core Lightning](https://github.com/ElementsProject/lightning) (or just c-lightning) by Blockstream.
+I will setup a Development Environment and use the Test-Suite [lnprototest](https://github.com/rustyrussell/lnprototest) to test the Core-Lightning implementation against the specifications defined in BOLTs and describe my learning experience during this process.
+
+## Preparations
+
+For a complete Development Environment and in order to be able to execute the tests, I needed to install/compile the following software:
+
+- [Bitcoin Core](https://github.com/bitcoin/bitcoin)
+- [Core Lightning](https://github.com/ElementsProject/lightning/blob/master/doc/INSTALL.md)
+- [lnprototest](https://github.com/rustyrussell/lnprototest)
+
+The installation and build instructions can be found inside the linked GitHub repositories of the projects. I highly recommend following these instructions carefully.
+It is also important to enable all the developer functionalities of c-lightning, so we have to compile it from source with the `--enable-developer` flag. I was compiling version v0.11.2.
+
+## Execute the tests
+
+After setting everything up, I was running the tests inside the root directory of `lnprototest`.
+The tests will be executed against a running instance of Bitcoin Core and c-lightning in regtest network. The Test-Runner will also start the binaries `bitcoind` and `lightningd` automatically, so all I had to do is:
+
+<SyntaxHighlighter language="shell">
+  {`
+(lnprototest-py3.10) $ make check PYTEST_ARGS='--runner=lnprototest.clightning.Runner'
+pytest --runner=lnprototest.clightning.Runner tests
+=========================================================================================== test session starts ===========================================================================================
+platform linux -- Python 3.10.6, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/maik/Projects/maikerlab/lnprototest/tests, configfile: pytest.ini
+collected 29 items
+
+tests/test_bolt1-01-init.py .. [ 6%]
+tests/test_bolt1-02-unknown-messages.py . [ 10%]
+tests/test_bolt2-01-close_channel.py .. [ 17%]
+tests/test_bolt2-01-open_channel.py . [ 20%]
+tests/test_bolt2-02-reestablish.py . [ 24%]
+tests/test_bolt2-10-add-htlc.py . [ 27%]
+tests/test_bolt2-20-open_channel_accepter.py ............. [ 72%]
+tests/test_bolt2-30-channel_type-open-accept-tlvs.py sss [ 82%]
+tests/test_bolt7-01-channel_announcement-success.py . [ 86%]
+tests/test_bolt7-02-channel_announcement-failure.py .. [ 93%]
+tests/test_bolt7-10-gossip-filter.py . [ 96%]
+tests/test_bolt7-20-query_channel_range.py . [100%]
+
+================================================================================ 26 passed, 3 skipped in 409.67s (0:06:49) ================================================================================
+
+`}
+
+</SyntaxHighlighter>
+
+While inspecting the output, we can see that the test runner was looking for all Python scripts in the folder `test`, which filenames start with `test_` and all test cases were executed (have a look [here](https://github.com/rustyrussell/lnprototest#running-test) to learn more about how this works).\
+During the further exploration of the test suite I also tried to run just a single test case. This speeds up the development process, because I don't want and have to run all the tests every time.
+
+<SyntaxHighlighter language="python">
+  {`
+    (lnprototest-py3.10) $ pytest --runner=lnprototest.clightning.Runner tests/test_bolt1-01-init.py::test_init
+  `}
+</SyntaxHighlighter>
+
+## Add new tests
+
+Now let´s take that a step further and imagine we are proposing an improvement to [BOLT #2 (Peer Protocol for Channel Management)](https://github.com/lightning/bolts/blob/master/02-peer-protocol.md).
+The process on how to add new test cases is described in detail [here](https://github.com/rustyrussell/lnprototest/blob/master/HACKING.md).
+I created a new file inside the `test` folder called `test_bolt2-40-supercoolnewfeature.py` and added the first test case:
+
+<SyntaxHighlighter language="python">
+  {`
+from lnprototest import (
+    Runner,
+    TryAll,
+    Connect,
+    ExpectMsg,
+    Msg,
+)
+from typing import Any
+
+def test_init(runner: Runner, namespaceoverride: Any) -> None:
+test = [
+Connect(connprivkey="02"),
+ExpectMsg("init"),
+TryAll(
+Msg("implementme", globalfeatures="", features=""),
+)
+]
+runner.run(test)
+`}
+
+</SyntaxHighlighter>
+
+After I executed the test I received the following output:
+
+<SyntaxHighlighter language="shell">
+{`
+(lnprototest-py3.10) $ pytest --runner=lnprototest.clightning.Runner tests/test_bolt2-40-supercoolnewfeature.py
+=========================================================================================== test session starts ===========================================================================================
+platform linux -- Python 3.10.6, pytest-7.1.3, pluggy-1.0.0
+rootdir: /home/maik/Projects/maikerlab/lnprototest/tests, configfile: pytest.ini
+collected 1 item
+
+tests/test_bolt2-40-supercoolnewfeature.py F [100%]
+
+================================================================================================ FAILURES =================================================================================================
+**********************************************\_\_\_\_********************************************** test_init **********************************************\_\_\_\_**********************************************
+
+runner = <lnprototest.clightning.clightning.Runner object at 0x7fac2b29f340>, namespaceoverride = <function namespaceoverride.<locals>.\_setter at 0x7fac2b1432e0>
+
+    def test_init(runner: Runner, namespaceoverride: Any) -> None:
+        test = [
+            Connect(connprivkey="02"),
+            ExpectMsg("init"),
+            TryAll(
+
+>               Msg("implementme", globalfeatures="", features=""),
+
+            )
+        ]
+
+tests/test_bolt2-40-supercoolnewfeature.py:19:
+
+---
+
+self = <lnprototest.event.Msg object at 0x7fac2b13a260>, msgtypename = 'implementme', connprivkey = None, kwargs = {'features': '', 'globalfeatures': ''}
+
+    def __init__(
+        self,
+        msgtypename: str,
+        connprivkey: Optional[str] = None,
+        **kwargs: Union[ResolvableStr, ResolvableInt],
+    ):
+        super().__init__(connprivkey)
+        self.msgtype = namespace().get_msgtype(msgtypename)
+
+        if not self.msgtype:
+
+>           raise SpecFileError(self, "Unknown msgtype {}".format(msgtypename))
+>
+> E lnprototest.errors.SpecFileError: (<lnprototest.event.Msg object at 0x7fac2b13a260>, 'Unknown msgtype implementme')
+
+lnprototest/event.py:164: SpecFileError
+========================================================================================= short test summary info =========================================================================================
+FAILED tests/test_bolt2-40-supercoolnewfeature.py::test_init - lnprototest.errors.SpecFileError: (<lnprototest.event.Msg object at 0x7fac2b13a260>, 'Unknown msgtype implementme')
+============================================================================================ 1 failed in 0.14s ============================================================================================
+`}
+
+</SyntaxHighlighter>
+
+Of course the test failed, because the new feature is not implemented in c-lightning yet.
+In the "short test summary info" section we can see the error message `Unknown msgtype implementme`, which indicates that we have to implement this message type first.
+
+## Summary
+
+This exercise was a great experience in start getting to learn how it would be to be actively contributing to the Lightning Network. There is a lot of material available to learn more on how Open-Source Development in the Bitcoin Space works, but I think the best way is always to get your hands dirty and really start building things.\
+After all the steps I did while working with the Test Suite, I have more clarity now about what my next steps in the development process would be:
+
+1. Think about what the "super cool new feature" could be :grin:
+2. Create a Pull Request of the [BOLT Repository](https://github.com/lightning/bolts) and describe my feature inside the affected BOLT
+3. Hopefully a great technical discussion will start on GitHub - improve the spec. and try to get a consensus about the proposed changes!
+4. Create a fork the Repository of Core Lightning
+5. Start implementing the new feature and also add good unit-tests to cover all the new code
+6. Compile Core Lightning again
+7. Add new tests to the Test-Suite to cover all the new functionality as specified in the updated BOLT
+
+**Recommendations to other Developers**
+As I stated above, it was a great experience for me to do this exercise and I can highly recommend to do it by yourself.
+From my experience I would also give the following recommendations to other "Junior Developers":
+
+- Get a Development Environment up and running on your machine
+- Use the CLI of c-lightning and Bitcoin Core to get familiar in working with it
+- Start reading the BOLTs and learn how the Lightning Network works
+- Also read [Mastering the Lightning Network](https://github.com/lnbook/lnbook) to learn from the experts
