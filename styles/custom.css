@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@800&display=swap");
+:root::after {
+  --font-family: "Open Sans", sans-serif;
+  --border-radius: 0;
+  --form-element-spacing-vertical: 1rem;
+  --form-element-spacing-horizontal: 1.25rem;
+  --primary: #d0b90a;
+  --secondary: #080;
+  --spacing: 2rem;
+  --color: #d0b90a;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: rgba(14, 14, 14, 0.71);
+  transition: all 0.2s;
+}
+
+.light-mode {
+  background-color: var(--primary);
+}
+
+.dark-mode {
+  background-color: var(--secondary);
+}
+
+:root {
+  --color-primary: #000;
+  --color-primary-accent: #2614c7;
+  --color-button: #3d486c;
+  --color-background: #fff;
+}
+
+[data-theme="dark"] {
+  --color-primary: #ff;
+  --color-primary-accent: #00ff4c;
+  --color-button: #00ff4c;
+  --color-background: #22212b;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  font-size: 26px;
+}

@@ -7,6 +7,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ThemeSwitch from "./ThemeSwitch";
 
 const Nav = () => {
   return (
@@ -22,6 +23,11 @@ const Nav = () => {
             <Link href="/" className="secondary">
               <strong>Maik Lorenz</strong>
             </Link>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <ThemeSwitch />
           </li>
         </ul>
         <ul>
