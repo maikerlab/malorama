@@ -6,6 +6,7 @@ import matter from "gray-matter";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import Button from "@src/components/Button";
 import { GetStaticPaths } from "next";
+import { Head } from "next/document";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const files = fs.readdirSync(path.join("posts"));

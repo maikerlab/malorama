@@ -7,7 +7,6 @@ import "styles/flatly.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { AppProps } from "next/app";
 import { useEffect } from "react";
-import BlogPosts from "@src/sections/header/BlogPosts";
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {

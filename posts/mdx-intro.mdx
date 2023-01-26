@@ -13,9 +13,13 @@ tags: ["blog", "mdx"]
 
 <br />
 
-### This is a Markdown sub-heading
+### Headings
 
-We just used a `###` subheading in our blog post.
+Just use "hashtags" (e. g. `###`) to add (sub-)headings in your blog post like in normal markdown files.
+
+### Syntax Highlighting
+
+We can show code snippets by using the `SyntaxHighlighter` component.
 
 <SyntaxHighlighter language="javascript">
   {`
@@ -41,6 +45,8 @@ We just used a `###` subheading in our blog post.
   `}
 </SyntaxHighlighter>
 
+We can also use simple code blocks by including code between 3 quotation marks.
+
 ```
   // this is a code block
   const doSomething = () => {
@@ -48,7 +54,11 @@ We just used a `###` subheading in our blog post.
   }
 ```
 
+### Using React components
+
 <div>
-  Here, I'm using a component inside my MarkDown file:{" "}
-  {<Button text={"Click me"} />}
+  Here, I'm using a `Button` component inside my Markdown file:
+  <Button text={"primary"} type={"primary"} />
+  <Button text={"warning"} type={"warning"} />
+  <Button text={"danger"} type={"danger"} />
 </div>

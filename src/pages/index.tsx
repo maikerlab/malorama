@@ -33,8 +33,8 @@ export default function Home({ posts }) {
   return (
     <div className="mt-5 row row-cols-1 row-cols-lg-2">
       {posts.map((post, index) => (
-        <div className="col">
-          <PostPreview post={post} key={index} />
+        <div key={index} className="col">
+          <PostPreview post={post} />
         </div>
       ))}
     </div>

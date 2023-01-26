@@ -6,7 +6,7 @@ interface ButtonProps {
 const Button = ({ text, type }: ButtonProps) => {
   return (
     <button
-      className={`btn btn-${type}`}
+      className={`m-2 btn btn-${type}`}
       onClick={(event) => alert("You clicked me!")}
     >
       {text}
