@@ -1,0 +1,7 @@
+.tags {
+  list-style-type: none;
+}
+
+.tag {
+  display: inline-block;
+}

@@ -1,38 +1,42 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTags } from "@fortawesome/free-solid-svg-icons";
+import styles from "./PostPreview.module.css";
 
 export default function PostPreview({ post }) {
   return (
-    <div className="card mb-3 p-2">
-      <Link href={"/blog/" + post.slug}>
-        <div className="row g-0">
-          <div className="col-md-8">
-            <div className="card-body">
-              <p className="card-text text-muted">
-                <i className="bi bi-tag" />
-                {post.frontMatter.tags.map((tag) => tag + " ")}
-              </p>
-              <h5 className="card-title">{post.frontMatter.title}</h5>
-              <p className="card-text">{post.frontMatter.description}</p>
-
-              <p className="card-text">
-                <small className="text-muted">{post.frontMatter.date}</small>
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4 m-auto">
-            <Image
-              src={post.frontMatter.thumbnailUrl}
-              className="img-fluid mt-1 rounded"
-              alt="thumbnail"
-              width={500}
-              height={400}
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-        </div>
-      </Link>
-    </div>
+    <article>
+      {/*         <header>
+          <Image
+            src={post.frontMatter.thumbnailUrl}
+            className="blog-img"
+            alt="Blogpost Preview"
+            width={500}
+            height={50}
+            style={{ objectFit: "fill", height: "100px" }}
+          />
+        </header> */}
+      <hgroup>
+        <Link href={"/blog/" + post.slug}>
+          <h5>{post.frontMatter.title}</h5>
+        </Link>
+        <h6>{post.frontMatter.description}</h6>
+      </hgroup>
+      <footer>
+        <p>
+          <ul className={styles.tags}>
+            <FontAwesomeIcon icon={faTags} /> |
+            {post.frontMatter.tags.map((tag, index) => (
+              <li key={index} className={styles.tag}>
+                <Link href="#">{tag}</Link>|
+              </li>
+            ))}
+          </ul>
+        </p>
+        <small>{post.frontMatter.date}</small>
+      </footer>
+    </article>
   );
 }
