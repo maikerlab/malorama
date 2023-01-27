@@ -7,32 +7,24 @@ import styles from "./ThemeSwitch.module.css";
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    setDarkMode(theme === "dark" ? true : false);
   }, []);
 
   if (!mounted) {
     return null;
   }
 
-  const toggleDarkMode = (on: boolean) => {
-    setDarkMode(on);
-    setTheme(on ? "dark" : "light");
-  };
-
   return (
-    <div>
+    <div className={styles.themeSwitch}>
       <FontAwesomeIcon icon={faSun} />
       <input
         id="dark-mode-switch"
         type="checkbox"
         role="switch"
-        className={styles.darkModeSwitch}
-        checked={darkMode}
-        onChange={(e) => toggleDarkMode(e.target.checked)}
+        checked={theme == "dark"}
+        onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
       ></input>
       <FontAwesomeIcon icon={faMoon} />
     </div>

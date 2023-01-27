@@ -1,4 +1,11 @@
-.darkModeSwitch {
-  margin-left: 0.6rem;
-  margin-right: 0.6rem;
+.themeSwitch {
+  display: flex;
+}
+
+.themeSwitch > * {
+  margin-right: 0.8rem;
+}
+
+.themeSwitch > *:last-child {
+  margin-right: 0;
 }
