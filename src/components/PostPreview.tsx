@@ -8,16 +8,16 @@ import styles from "./PostPreview.module.css";
 export default function PostPreview({ post }) {
   return (
     <article>
-      {/*         <header>
+      <header>
+        <div className={styles.blogImage}>
           <Image
-            src={post.frontMatter.thumbnailUrl}
-            className="blog-img"
+            src={`/images/${post.frontMatter.image}`}
             alt="Blogpost Preview"
             width={500}
             height={50}
-            style={{ objectFit: "fill", height: "100px" }}
           />
-        </header> */}
+        </div>
+      </header>
       <hgroup>
         <Link href={"/blog/" + post.slug}>
           <h5>{post.frontMatter.title}</h5>
