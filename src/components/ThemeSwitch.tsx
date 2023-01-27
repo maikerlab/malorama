@@ -18,29 +18,26 @@ export default function ThemeSwitch() {
 
   return (
     <>
-      {theme === "dark" ? (
-        <button
-          onClick={() => setTheme("light")}
-          className="flex items-center rounded-lg p-2"
-        >
+      <button
+        aria-label="Toggle Dark Mode"
+        type="button"
+        className="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-200 ring-gray-300  transition-all hover:ring-2  dark:bg-gray-600"
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      >
+        {theme === "dark" ? (
           <FontAwesomeIcon
             icon={faSun}
             className="h-5 w-5 fill-current"
             //viewBox="0 0 20 20 "
           />
-        </button>
-      ) : (
-        <button
-          onClick={() => setTheme("dark")}
-          className="flex items-center rounded-lg p-2"
-        >
+        ) : (
           <FontAwesomeIcon
             icon={faMoon}
             className="h-5 w-5 fill-current"
             //viewBox="0 0 10 10 "
           />
-        </button>
-      )}
+        )}
+      </button>
     </>
   );
 }

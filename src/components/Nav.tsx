@@ -15,9 +15,11 @@ const Nav = () => {
 
   return (
     <div className="">
-      <nav className="mb-12 flex justify-between space-x-4 py-5 px-10">
+      <nav className="flex justify-between space-x-4 py-5 px-10">
         <Link href="/">
-          <h1 className="font-robotoMono text-xl font-bold">malorama</h1>
+          <h1 className="font-robotoMono text-xl font-bold lg:text-3xl">
+            malorama
+          </h1>
         </Link>
         <ul className="flex items-center">
           {[
@@ -33,7 +35,7 @@ const Nav = () => {
               </Link>
             </li>
           ))}
-          <li className="ml-8 cursor-pointer rounded-full bg-gray-200 px-4 py-2 font-bold text-black hover:bg-slate-500 hover:text-white">
+          <li className="ml-8">
             <ThemeSwitch />
           </li>
         </ul>
