@@ -1,5 +1,6 @@
 .themeSwitch {
   display: flex;
+  width: fit-content;
 }
 
 .themeSwitch > * {
