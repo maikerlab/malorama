@@ -19,8 +19,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Maiks Portfolio</title>
       </Head>
-      <Nav />
-      <main className="bg-white px-10 dark:bg-black dark:text-white md:px-20 lg:px-40">
+      <main className="md:px-20 lg:px-40 dark:bg-black-variant min-h-screen bg-white px-10 dark:text-white">
+        <Nav />
         <Component {...pageProps} />
       </main>
     </ThemeProvider>
