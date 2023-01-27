@@ -4,8 +4,8 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import Button from "@src/components/Button";
 import { GetStaticPaths } from "next";
+import styles from "@styles/PostPage.module.css";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const files = fs.readdirSync(path.join("posts"));
@@ -39,8 +39,10 @@ export const getStaticProps = async ({ params: { slug } }) => {
 const PostPage = ({ frontMatter: { title }, mdxSource }) => {
   return (
     <div className="container">
-      <h1>{title}</h1>
-      <MDXRemote {...mdxSource} components={{ Button, SyntaxHighlighter }} />
+      <div className={styles.post}>
+        <h1 className="my-8 font-bold">{title}</h1>
+        <MDXRemote {...mdxSource} components={{ SyntaxHighlighter }} />
+      </div>
     </div>
   );
 };

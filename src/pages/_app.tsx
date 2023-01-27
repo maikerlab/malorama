@@ -2,7 +2,6 @@ import Head from "next/head";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import { useEffect, useState } from "react";
-import "@picocss/pico";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
@@ -15,13 +14,13 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <ThemeProvider>
+    <ThemeProvider attribute="class">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>maloramas Blog</title>
+        <title>Maiks Portfolio</title>
       </Head>
       <Nav />
-      <main>
+      <main className="bg-white px-10 dark:bg-black dark:text-white md:px-20 lg:px-40">
         <Component {...pageProps} />
       </main>
     </ThemeProvider>

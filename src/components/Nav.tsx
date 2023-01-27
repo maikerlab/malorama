@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { faBars, faEnvelope, faClose } from "@fortawesome/free-solid-svg-icons";
 import {
-  faLinkedin,
-  faGithub,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+  faBars,
+  faEnvelope,
+  faClose,
+  faMoon,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ThemeSwitch from "./ThemeSwitch";
 import SideNav from "./SideNav";
@@ -14,77 +14,29 @@ const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <div className="container">
-      {navOpen ? <SideNav /> : null}
-      <nav>
-        <ul>
-          <li>
-            <Link
-              href="#"
-              className="secondary"
-              aria-label="Menu"
-              onClick={() => setNavOpen(!navOpen)}
-            >
-              {navOpen ? (
-                <FontAwesomeIcon icon={faClose} />
-              ) : (
-                <FontAwesomeIcon icon={faBars} />
-              )}
-            </Link>
-          </li>
-          <li>
-            <Link href="/" className="secondary">
-              <strong>Maik Lorenz</strong>
-            </Link>
+    <div className="">
+      <nav className="mb-12 flex justify-between space-x-4 py-5 px-10">
+        <Link href="/">
+          <h1 className="font-robotoMono text-xl font-bold">malorama</h1>
+        </Link>
+        <ul className="flex items-center">
+          {[
+            ["Home", "/"],
+            ["Blog", "/blog"],
+          ].map(([title, url]) => (
+            <li>
+              <Link
+                href={url}
+                className="ml-8 rounded-md bg-gray-200 px-4 py-2 font-bold text-black hover:bg-slate-500 hover:text-white"
+              >
+                {title}
+              </Link>
+            </li>
+          ))}
+          <li className="ml-8 cursor-pointer rounded-full bg-gray-200 px-4 py-2 font-bold text-black hover:bg-slate-500 hover:text-white">
+            <ThemeSwitch />
           </li>
         </ul>
-        {navOpen ? null : (
-          <>
-            <ul>
-              <li>
-                <ThemeSwitch />
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <Link href="/" className="secondary">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="secondary">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                {" "}
-                <Link href="/projects" className="secondary">
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="secondary" aria-label="GitHub">
-                  <FontAwesomeIcon icon={faGithub} />
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="secondary" aria-label="LinkedIn">
-                  <FontAwesomeIcon icon={faLinkedin} />
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="secondary" aria-label="Twitter">
-                  <FontAwesomeIcon icon={faTwitter} />
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="secondary" aria-label="Mail">
-                  <FontAwesomeIcon icon={faEnvelope} />
-                </Link>
-              </li>
-            </ul>
-          </>
-        )}
       </nav>
     </div>
   );

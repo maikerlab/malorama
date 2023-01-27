@@ -29,21 +29,17 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Blog = ({ posts }) => {
   return (
-    <div className="container">
-      <hgroup>
-        <h2>Blog posts</h2>
-        <h3>Here are some blog posts of me.</h3>
-      </hgroup>
-      <section id="blog" className="blog">
-        <div className="grid">
+    <>
+      <h2 className="text-2xl font-bold">Blog posts</h2>
+      <h3 className="text-lg text-gray-500">Here are some blog posts of me.</h3>
+      <section id="blog" className="pt-5">
+        <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
           {posts.map((post, index) => (
-            <div key={index}>
-              <PostPreview post={post} />
-            </div>
+            <PostPreview post={post} key={index} />
           ))}
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

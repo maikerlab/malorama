@@ -6,42 +6,31 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "./SideNav.module.css";
 import ThemeSwitch from "./ThemeSwitch";
 import Link from "next/link";
 
 export default function SideNav() {
   return (
     <aside>
-      <nav className={styles.sideNav}>
+      <nav>
         <ul>
           <li>
-            <Link href="/" className="secondary">
-              Home
-            </Link>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/blog" className="secondary">
-              Blog
-            </Link>
+            <Link href="/blog">Blog</Link>
           </li>
           <li>
-            {" "}
-            <Link href="/projects" className="secondary">
-              Projects
-            </Link>
-          </li>
-          <li className={styles.socialLinks}>
-            <Link href="#" className="secondary" aria-label="GitHub">
+            <Link href="#" aria-label="GitHub">
               <FontAwesomeIcon icon={faGithub} />
             </Link>
-            <Link href="#" className="secondary" aria-label="LinkedIn">
+            <Link href="#" aria-label="LinkedIn">
               <FontAwesomeIcon icon={faLinkedin} />
             </Link>
-            <Link href="#" className="secondary" aria-label="Twitter">
+            <Link href="#" aria-label="Twitter">
               <FontAwesomeIcon icon={faTwitter} />
             </Link>
-            <Link href="#" className="secondary" aria-label="Mail">
+            <Link href="#" aria-label="Mail">
               <FontAwesomeIcon icon={faEnvelope} />
             </Link>
           </li>
