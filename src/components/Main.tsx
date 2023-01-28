@@ -28,12 +28,12 @@ const Main = () => {
             Mollitia, in!
           </p>
           <div className="m-auto flex max-w-[440px] items-center justify-between py-4">
-            <div className="cursor-pointer rounded-full p-4 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
+            <div className="cursor-pointer rounded-full bg-gray-100 p-4 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110 dark:bg-gray-300">
               <Link href="https://github.com/maikerlab" target="_blank">
                 <FaGithub size={30} color="#333" />
               </Link>
             </div>
-            <div className="cursor-pointer rounded-full p-4 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
+            <div className="cursor-pointer rounded-full bg-gray-100 p-4 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110 dark:bg-gray-300">
               <Link
                 href="https://www.linkedin.com/in/maik-lorenz-5b7780bb/"
                 target="_blank"
@@ -41,12 +41,12 @@ const Main = () => {
                 <FaLinkedin size={30} color="#0e76a8" />
               </Link>
             </div>
-            <div className="cursor-pointer rounded-full p-4 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
+            <div className="cursor-pointer rounded-full bg-gray-100 p-4 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110 dark:bg-gray-300">
               <Link href="https://twitter.com/malorama" target="_blank">
                 <FaTwitter size={30} color="#1DA1F2" />
               </Link>
             </div>
-            <div className="cursor-pointer rounded-full p-4 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
+            <div className="cursor-pointer rounded-full bg-gray-100 p-4 text-black shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110 dark:bg-gray-300">
               <Link href="mailto:maik.lorenz@protonmail.com">
                 <AiOutlineMail size={30} />
               </Link>

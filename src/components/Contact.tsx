@@ -26,8 +26,8 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <h2 className="py-2">Name here</h2>
-                <p>Frontend Developer</p>
+                <h2 className="py-2">Maik Lorenz</h2>
+                <p>Software Developer</p>
                 <p className="py-4">
                   I am available for freelance or part-time positions.
                 </p>

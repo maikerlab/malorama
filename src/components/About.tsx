@@ -26,12 +26,7 @@ const About = () => {
               Check out some of my latest projects!
             </p>
           </div>
-          <div className="m-auto flex h-auto  max-w-sm items-center justify-center rounded-xl bg-gunmetal/80 p-4 shadow-xl shadow-gray-400 duration-300 ease-in hover:scale-105">
-            {/*           <img
-            src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            alt="Notebook"
-            className="rounded-xl"
-          /> */}
+          <div className="m-auto flex h-auto w-80 items-center justify-center rounded-xl bg-gunmetal/80 p-4 shadow-xl shadow-gray-400 duration-300 ease-in hover:scale-105">
             <Image
               src={maik}
               width={800}
@@ -40,7 +35,7 @@ const About = () => {
               className="rounded-xl"
             />
           </div>
-          <div className="col-span-3">
+          <div className="col-span-3 mt-12">
             <Timeline />
           </div>
         </div>

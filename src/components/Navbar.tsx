@@ -23,13 +23,10 @@ const Navbar = () => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log("path contains projects: " + router.asPath.search("/projects"));
     if (router.asPath.search("/projects") === 0) {
-      console.log("nav transparent");
       setNavBg("transparent");
       setLinkColor("cultured");
     } else {
-      console.log("nav white");
       setNavBg("cultured");
       setLinkColor("gunmetal");
     }
@@ -69,7 +66,7 @@ const Navbar = () => {
           <ul className={`hidden md:flex text-${linkColor}`}>
             {navItems.map(([title, url], idx) => (
               <Link href={url} key={idx} scroll={false}>
-                <li className="ml-10 text-sm uppercase hover:border-b dark:text-white">
+                <li className="text-md ml-10 border-b-gunmetal uppercase hover:border-b dark:border-b-white dark:text-white">
                   {title}
                 </li>
               </Link>
