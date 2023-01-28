@@ -5,6 +5,7 @@ import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { useRouter } from "next/router";
+import ThemeSwitch from "./ThemeSwitch";
 
 const navItems = [
   ["Home", "/#main"],
@@ -53,19 +54,22 @@ const Navbar = () => {
     <div
       className={`fixed ${
         shadow ? "shadow-xl" : ""
-      } fixed z-[100] h-20 w-full px-4 bg-${navBg}`}
+      } fixed z-[100] h-20 w-full px-4 bg-${navBg} dark:bg-inherit`}
     >
       <div className="flex h-full w-full items-center justify-between px-2 2xl:px-16">
-        <Link href="/">
-          <h1 className={`font-monospace text-3xl text-${linkColor}`}>
-            malorama
+        <div className="flex gap-8">
+          <h1
+            className={`my-auto font-monospace text-3xl text-${linkColor} dark:text-white`}
+          >
+            <Link href="/">malorama</Link>
           </h1>
-        </Link>
+          <ThemeSwitch />
+        </div>
         <div>
           <ul className={`hidden md:flex text-${linkColor}`}>
             {navItems.map(([title, url], idx) => (
               <Link href={url} key={idx} scroll={false}>
-                <li className="ml-10 text-sm uppercase hover:border-b">
+                <li className="ml-10 text-sm uppercase hover:border-b dark:text-white">
                   {title}
                 </li>
               </Link>
