@@ -24,13 +24,13 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <div className="w-full lg:h-screen p-2">
-      <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full">
-        <p className="text-xl tracking-widest uppercase text-primary">Skills</p>
+    <div className="w-full p-2 lg:h-screen">
+      <div className="mx-auto flex h-full max-w-[1240px] flex-col justify-center">
+        <p className="text-xl uppercase tracking-widest text-primary">Skills</p>
         <h2 className="py-4">What I can do</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300">
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="rounded-xl p-6 shadow-xl duration-300 ease-in hover:scale-105">
+            <div className="grid grid-cols-2 items-center justify-center gap-4">
               <div className="m-auto">
                 <DiJsBadge className="text-5xl text-yellow-500" />
               </div>
@@ -39,8 +39,8 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300">
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
+          <div className="rounded-xl p-6 shadow-xl duration-300 ease-in hover:scale-105">
+            <div className="grid grid-cols-2 items-center justify-center gap-4">
               <div className="m-auto">
                 <DiJava className="text-5xl text-gray-600" />
               </div>
@@ -49,8 +49,8 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300">
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
+          <div className="rounded-xl p-6 shadow-xl duration-300 ease-in hover:scale-105">
+            <div className="grid grid-cols-2 items-center justify-center gap-4">
               <div className="m-auto">
                 <DiGithubBadge className="text-5xl text-black" />
               </div>
@@ -59,8 +59,8 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300">
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
+          <div className="rounded-xl p-6 shadow-xl duration-300 ease-in hover:scale-105">
+            <div className="grid grid-cols-2 items-center justify-center gap-4">
               <div className="m-auto">
                 <DiDocker className="text-5xl text-blue-700" />
               </div>
