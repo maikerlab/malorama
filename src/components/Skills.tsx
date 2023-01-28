@@ -24,10 +24,10 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <div id="skills" className="w-full p-2 lg:h-screen">
-      <div className="mx-auto flex h-full max-w-[1240px] flex-col justify-center">
+    <div id="skills" className="w-full p-2">
+      <div className="mx-auto flex h-full max-w-[1240px] flex-col justify-center py-12">
         <p className="text-xl uppercase tracking-widest text-primary">Skills</p>
-        <h2 className="py-4">What I can do</h2>
+        <h2 className="py-1">What I can do</h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl p-6 shadow-xl duration-300 ease-in hover:scale-105">
             <div className="grid grid-cols-2 items-center justify-center gap-4">

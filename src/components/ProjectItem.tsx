@@ -16,7 +16,7 @@ const ProjectItem = ({
   projectUrl,
 }: IProjectProps) => {
   return (
-    <div className="group relative flex h-auto w-full items-center justify-center rounded-xl from-primary to-accent p-4 shadow-xl shadow-gray-400 hover:bg-gradient-to-r">
+    <div className="group relative flex h-auto w-full items-center justify-center rounded-xl from-primary to-accent p-3 shadow-xl shadow-gray-400 hover:bg-gradient-to-r">
       <Image
         className="rounded-xl group-hover:opacity-10"
         src={backgroundImg}
@@ -30,7 +30,7 @@ const ProjectItem = ({
         </h3>
         <p className="pb-4 pt-2 text-center text-white">{description}</p>
         <Link href={`/projects${projectUrl}`}>
-          <p className="cursor-pointer rounded-lg bg-white py-3 text-center text-lg font-bold text-gray-700">
+          <p className="cursor-pointer rounded-lg bg-white py-3 text-center text-lg font-bold text-gray-700 duration-300 ease-in hover:scale-105">
             More Info
           </p>
         </Link>

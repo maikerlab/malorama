@@ -8,7 +8,7 @@ module.exports = {
         monospace: "ShareTech Mono Regular",
       },
       colors: {
-        primary: "#5651e5",
+        primary: "#005EE2",
         secondary: "#709dff",
         accent: "#709dff",
         cultured: "#ecf0f3",

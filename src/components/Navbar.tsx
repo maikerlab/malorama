@@ -54,12 +54,12 @@ const Navbar = () => {
     <div
       className={`fixed ${
         shadow ? "shadow-xl" : ""
-      } fixed z-[100] h-20 w-full px-4 bg-${navBg} dark:bg-inherit`}
+      } fixed z-[100] w-full py-5 px-4 bg-${navBg} dark:bg-inherit`}
     >
       <div className="flex h-full w-full items-center justify-between px-2 2xl:px-16">
         <div className="flex gap-8">
           <h1
-            className={`my-auto font-monospace text-3xl text-${linkColor} dark:text-white`}
+            className={`my-auto font-monospace text-3xl text-primary dark:text-white lg:text-4xl`}
           >
             <Link href="/">malorama</Link>
           </h1>
