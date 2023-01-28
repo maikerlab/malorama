@@ -5,8 +5,8 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Main = () => {
   return (
-    <div className="w-full h-screen text-center">
-      <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
+    <div id="main" className="h-screen w-full text-center">
+      <div className="mx-auto flex h-full w-full max-w-[1240px] items-center justify-center p-2">
         <div>
           <p className="uppercase tracking-widest text-gray-600">
             Lets build something together!
@@ -17,7 +17,7 @@ const Main = () => {
           <h1 className="py-2 text-gray-700">
             A Software Developer in the making.
           </h1>
-          <p className="py-4 text-gray-600 max-w-[70%] m-auto">
+          <p className="m-auto max-w-[70%] py-4 text-gray-600">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Repudiandae asperiores dolore libero debitis. Non iure et
             accusantium reiciendis necessitatibus ex eius error, dicta
@@ -26,20 +26,20 @@ const Main = () => {
             deleniti molestiae doloribus excepturi corrupti praesentium soluta.
             Mollitia, in!
           </p>
-          <div className="flex items-center justify-between max-w-[440px] m-auto py-4">
-            <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+          <div className="m-auto flex max-w-[440px] items-center justify-between py-4">
+            <div className="cursor-pointer rounded-full p-6 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
               <FaLinkedin />
             </div>
-            <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+            <div className="cursor-pointer rounded-full p-6 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
               <FaGithub />
             </div>
-            <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+            <div className="cursor-pointer rounded-full p-6 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
               <FaTwitter />
             </div>
-            <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+            <div className="cursor-pointer rounded-full p-6 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
               <AiOutlineMail />
             </div>
-            <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+            <div className="cursor-pointer rounded-full p-6 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
               <BsFillPersonLinesFill />
             </div>
           </div>

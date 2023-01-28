@@ -24,7 +24,7 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <div className="w-full p-2 lg:h-screen">
+    <div id="skills" className="w-full p-2 lg:h-screen">
       <div className="mx-auto flex h-full max-w-[1240px] flex-col justify-center">
         <p className="text-xl uppercase tracking-widest text-primary">Skills</p>
         <h2 className="py-4">What I can do</h2>

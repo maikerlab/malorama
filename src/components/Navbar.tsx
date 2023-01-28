@@ -1,56 +1,74 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 
 const navItems = [
-  ["Home", "/"],
+  ["Home", "#main"],
   ["About", "#about"],
   ["Skills", "#skills"],
   ["Projects", "#projects"],
-  ["Blog", "#blog"],
+  ["Blog", "/blog"],
 ];
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const [shadow, setShadow] = useState(false);
 
   const handleNav = () => {
     setNav(!nav);
   };
 
+  useEffect(() => {
+    const handleShadow = () => {
+      if (window.scrollY >= 90) {
+        setShadow(true);
+      } else {
+        setShadow(false);
+      }
+    };
+    window.addEventListener("scroll", handleShadow);
+  }, []);
+
   return (
-    <div className="fixed w-full h-20 shadow-xl z-[100] px-4 bg-cultured">
-      <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
+    <div
+      className={
+        shadow
+          ? "fixed z-[100] h-20 w-full bg-cultured px-4 shadow-xl"
+          : "fixed z-[100] h-20 w-full bg-cultured px-4"
+      }
+    >
+      <div className="flex h-full w-full items-center justify-between px-2 2xl:px-16">
         <Link href="/">
           <h1 className="font-monospace text-3xl">malorama</h1>
         </Link>
         <div>
           <ul className="hidden md:flex">
             {navItems.map(([title, url], idx) => (
-              <Link href={url} key={idx}>
+              <Link href={url} key={idx} scroll={false}>
                 <li className="ml-10 text-sm uppercase hover:border-b">
                   {title}
                 </li>
               </Link>
             ))}
           </ul>
-          <div onClick={handleNav} className="md:hidden cursor-pointer">
+          <div onClick={handleNav} className="cursor-pointer md:hidden">
             <AiOutlineMenu size={25} />
           </div>
         </div>
       </div>
       <div
         className={
-          nav ? "fixed md:hidden left-0 top-0 w-full h-screen bg-black/70" : ""
+          nav ? "fixed left-0 top-0 h-screen w-full bg-black/70 md:hidden" : ""
         }
       >
         <div
           className={
             nav
-              ? "fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-cultured p-10 ease-in duration-500"
-              : "fixed -left-full top-0 p-10 ease-in duration-500"
+              ? "fixed left-0 top-0 h-screen w-[75%] bg-cultured p-10 duration-500 ease-in sm:w-[60%] md:w-[45%]"
+              : "fixed -left-full top-0 p-10 duration-500 ease-in"
           }
         >
           <div>
@@ -60,24 +78,24 @@ const Navbar = () => {
               </Link>
               <div
                 onClick={handleNav}
-                className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer"
+                className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400"
               >
                 <AiOutlineClose />
               </div>
             </div>
-            <div className="border-b border-gray-300 my-4">
-              <p className="w-[85%] md:w-[90%] py-4">
+            <div className="my-4 border-b border-gray-300">
+              <p className="w-[85%] py-4 md:w-[90%]">
                 <strong>Ma</strong>ik <strong>Lor</strong>enz -{" "}
                 <strong>A</strong>sk <strong>M</strong>e <strong>A</strong>
                 nything!
               </p>
             </div>
           </div>
-          <div className="py-4 flex flex-col">
+          <div className="flex flex-col py-4">
             <ul className="uppercase">
               {navItems.map(([title, url], idx) => (
                 <Link href={url} key={idx}>
-                  <li className="ml-10 text-sm hover:border-b py-4">{title}</li>
+                  <li className="ml-10 py-4 text-sm hover:border-b">{title}</li>
                 </Link>
               ))}
             </ul>
@@ -85,20 +103,20 @@ const Navbar = () => {
               <p className="uppercase tracking-widest text-primary">
                 Let's connect!
               </p>
-              <div className="flex items-center justify-between my-4 w-full sm:w-[80%]">
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+              <div className="my-4 flex w-full items-center justify-between sm:w-[80%]">
+                <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
                   <FaLinkedin />
                 </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
                   <FaGithub />
                 </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
                   <FaTwitter />
                 </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
                   <AiOutlineMail />
                 </div>
-                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
                   <BsFillPersonLinesFill />
                 </div>
               </div>
