@@ -28,8 +28,8 @@ const Navbar = () => {
         </Link>
         <div>
           <ul className="hidden md:flex">
-            {navItems.map(([title, url]) => (
-              <Link href={url}>
+            {navItems.map(([title, url], idx) => (
+              <Link href={url} key={idx}>
                 <li className="ml-10 text-sm uppercase hover:border-b">
                   {title}
                 </li>
@@ -75,8 +75,8 @@ const Navbar = () => {
           </div>
           <div className="py-4 flex flex-col">
             <ul className="uppercase">
-              {navItems.map(([title, url]) => (
-                <Link href={url}>
+              {navItems.map(([title, url], idx) => (
+                <Link href={url} key={idx}>
                   <li className="ml-10 text-sm hover:border-b py-4">{title}</li>
                 </Link>
               ))}
