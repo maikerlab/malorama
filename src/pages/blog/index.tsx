@@ -1,5 +1,5 @@
 import React from "react";
-import PostPreview from "src/components/PostPreview";
+import PostCard from "@components/PostCard";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -35,7 +35,7 @@ const Blog = ({ posts }) => {
       <section id="blog" className="pt-5">
         <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
           {posts.map((post, index) => (
-            <PostPreview post={post} key={index} />
+            <PostCard post={post} key={index} />
           ))}
         </div>
       </section>

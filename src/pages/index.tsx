@@ -1,12 +1,20 @@
-import Sidebar from "@src/components/Sidebar";
-import Hero from "@src/sections/Hero";
-import Skills from "@src/sections/Skills";
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "@next/font/google";
+import Navbar from "@/components/Navbar";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="relative">
-      <Hero />
-      <Skills />
-    </div>
+    <>
+      <Head>
+        <title>Maik | malorama</title>
+        <meta name="description" content="Portfolio of Maik Lorenz" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Navbar />
+    </>
   );
 }
