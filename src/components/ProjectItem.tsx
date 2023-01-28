@@ -29,7 +29,7 @@ const ProjectItem = ({
           {title}
         </h3>
         <p className="pb-4 pt-2 text-center text-white">{description}</p>
-        <Link href={projectUrl}>
+        <Link href={`/projects${projectUrl}`}>
           <p className="cursor-pointer rounded-lg bg-white py-3 text-center text-lg font-bold text-gray-700">
             More Info
           </p>

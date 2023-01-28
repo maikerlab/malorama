@@ -4,9 +4,10 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import { useRouter } from "next/router";
 
 const navItems = [
-  ["Home", "#main"],
+  ["Home", "/#main"],
   ["About", "#about"],
   ["Skills", "#skills"],
   ["Projects", "#projects"],
@@ -16,6 +17,22 @@ const navItems = [
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
+  const [navBg, setNavBg] = useState("cultured");
+  const [linkColor, setLinkColor] = useState("gunmetal");
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log("path contains projects: " + router.asPath.search("/projects"));
+    if (router.asPath.search("/projects") === 0) {
+      console.log("nav transparent");
+      setNavBg("transparent");
+      setLinkColor("cultured");
+    } else {
+      console.log("nav white");
+      setNavBg("cultured");
+      setLinkColor("gunmetal");
+    }
+  }, [router]);
 
   const handleNav = () => {
     setNav(!nav);
@@ -34,18 +51,18 @@ const Navbar = () => {
 
   return (
     <div
-      className={
-        shadow
-          ? "fixed z-[100] h-20 w-full bg-cultured px-4 shadow-xl"
-          : "fixed z-[100] h-20 w-full bg-cultured px-4"
-      }
+      className={`fixed ${
+        shadow ? "shadow-xl" : ""
+      } fixed z-[100] h-20 w-full px-4 bg-${navBg}`}
     >
       <div className="flex h-full w-full items-center justify-between px-2 2xl:px-16">
         <Link href="/">
-          <h1 className="font-monospace text-3xl">malorama</h1>
+          <h1 className={`font-monospace text-3xl text-${linkColor}`}>
+            malorama
+          </h1>
         </Link>
         <div>
-          <ul className="hidden md:flex">
+          <ul className={`hidden md:flex text-${linkColor}`}>
             {navItems.map(([title, url], idx) => (
               <Link href={url} key={idx} scroll={false}>
                 <li className="ml-10 text-sm uppercase hover:border-b">
@@ -94,7 +111,12 @@ const Navbar = () => {
           <div className="flex flex-col py-4">
             <ul className="uppercase">
               {navItems.map(([title, url], idx) => (
-                <Link href={url} key={idx}>
+                <Link
+                  href={url}
+                  key={idx}
+                  scroll={false}
+                  onClick={() => setNav(false)}
+                >
                   <li className="ml-10 py-4 text-sm hover:border-b">{title}</li>
                 </Link>
               ))}

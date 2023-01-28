@@ -17,7 +17,7 @@ const Projects = () => {
             title="Test Project"
             description="Example project I have built"
             backgroundImg={test}
-            projectUrl="/testprj"
+            projectUrl="/project1"
           />
           <ProjectItem
             title="BTC Point of Sale"

@@ -12,6 +12,7 @@ module.exports = {
         secondary: "#709dff",
         accent: "#709dff",
         cultured: "#ecf0f3",
+        gunmetal: "#1f2937",
       },
     },
   },
