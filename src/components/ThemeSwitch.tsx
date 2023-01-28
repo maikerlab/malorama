@@ -4,7 +4,7 @@ import { faMoon, faLightbulb } from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
-export default function ThemeSwitch() {
+export default function ThemeSwitch({ withLabel }) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -17,7 +17,7 @@ export default function ThemeSwitch() {
   }
 
   return (
-    <>
+    <div className="flex flex-col items-center">
       <button
         aria-label="Toggle Dark Mode"
         type="button"
@@ -33,6 +33,11 @@ export default function ThemeSwitch() {
           <FontAwesomeIcon icon={faMoon} className="h-5 w-5 fill-current" />
         )}
       </button>
-    </>
+      {withLabel && (
+        <label className="text-xs font-thin">
+          {theme === "dark" ? "Let there be light" : "Turn of the lights"}
+        </label>
+      )}
+    </div>
   );
 }

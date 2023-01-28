@@ -5,7 +5,7 @@ import path from "path";
 import matter from "gray-matter";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { GetStaticPaths } from "next";
-import styles from "@styles/PostPage.module.css";
+import styles from "@styles/Post.module.css";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const files = fs.readdirSync(path.join("posts"));
@@ -36,7 +36,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
   };
 };
 
-const PostPage = ({ frontMatter: { title }, mdxSource }) => {
+const Post = ({ frontMatter: { title }, mdxSource }) => {
   return (
     <div className="container">
       <div className={styles.post}>
@@ -47,4 +47,4 @@ const PostPage = ({ frontMatter: { title }, mdxSource }) => {
   );
 };
 
-export default PostPage;
+export default Post;

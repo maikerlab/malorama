@@ -8,13 +8,17 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import maik from "public/images/maik.jpg";
+import Button from "@src/components/Button";
 
 export default function Hero() {
   return (
-    <section id="hero" className="lg:flex">
+    <section id="about" className="lg:flex">
       <div>
+        {/* <Button text="Click me!" /> */}
         <div className="p-10 text-center">
-          <h2 className="py-2 text-3xl font-medium">Hi, I am Maik!</h2>
+          <h2 className="py-2 text-3xl font-medium text-blue dark:text-green-lizard">
+            Hi, I am Maik!
+          </h2>
           <h3 className="py-2 text-xl">Student of Computer Science</h3>
           <p className="text-md mx-auto max-w-xl py-2 leading-8 text-gray-800 dark:text-white">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore
@@ -28,21 +32,21 @@ export default function Hero() {
         <div className="flex justify-center gap-12 py-2 text-3xl text-gray-600">
           <Link
             href="https://github.com/maikerlab"
-            className="hover:text-blue-500"
+            className="hover:text-blue dark:hover:text-green-lizard"
             target="_blank"
           >
             <FontAwesomeIcon icon={faGithub} />
           </Link>
           <Link
             href="https://www.linkedin.com/in/maik-lorenz-5b7780bb/"
-            className="hover:text-blue-500"
+            className="hover:text-blue hover:dark:text-green-lizard"
             target="_blank"
           >
             <FontAwesomeIcon icon={faLinkedin} />
           </Link>
           <Link
             href="https://twitter.com/malorama"
-            className="hover:text-blue-500"
+            className="hover:text-blue hover:dark:text-green-lizard"
             target="_blank"
           >
             <FontAwesomeIcon icon={faTwitter} />
