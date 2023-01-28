@@ -14,6 +14,9 @@ module.exports = {
         cultured: "#ecf0f3",
         gunmetal: "#1f2937",
       },
+      transitionProperty: {
+        height: "height",
+      },
     },
   },
   plugins: [],

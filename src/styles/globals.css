@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#ecf0f3] tracking-wide text-[#1f2937];
+    @apply bg-cultured tracking-wide text-gunmetal dark:bg-black dark:text-cultured;
   }
 
   h1,
