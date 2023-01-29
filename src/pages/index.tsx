@@ -16,9 +16,6 @@ export default function Home() {
     <>
       <Head>
         <title>Home | malorama</title>
-        <meta name="description" content="Portfolio of Maik Lorenz" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main />
       <About />

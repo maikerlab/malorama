@@ -5,7 +5,7 @@ import path from "path";
 import matter from "gray-matter";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { GetStaticPaths } from "next";
-import styles from "../../styles/Post.module.css";
+import styles from "@styles/Post.module.css";
 import Head from "next/head";
 
 export const getStaticPaths: GetStaticPaths = async () => {

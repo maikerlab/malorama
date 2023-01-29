@@ -33,9 +33,6 @@ const Blog = ({ posts }: { posts: IPostMeta[] }) => {
     <>
       <Head>
         <title>Blog | malorama</title>
-        <meta name="description" content="Portfolio of Maik Lorenz" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div id="main" className="mx-auto h-screen max-w-[1240px] px-4">
         <p className="text-xl uppercase tracking-widest text-primary">Blog</p>
