@@ -15,7 +15,6 @@ export interface IPostMeta {
 }
 
 export default function PostCard({ slug, frontMatter }: IPostMeta) {
-  console.log(slug);
   return (
     <div className="relative rounded-xl bg-gradient-to-br from-primary to-secondary p-6 shadow-lg duration-300 hover:scale-105">
       <Image

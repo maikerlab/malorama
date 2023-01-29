@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Blog = ({ posts }) => {
+const Blog = ({ posts }: { posts: IPostMeta[] }) => {
   return (
     <>
       <Head>
@@ -43,7 +43,6 @@ const Blog = ({ posts }) => {
         <section id="blog" className="pt-5">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {posts.map((post: IPostMeta, index) => {
-              console.log(post);
               return <PostCard {...post} key={index} />;
             })}
           </div>

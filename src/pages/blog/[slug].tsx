@@ -21,7 +21,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params: { slug } }) => {
+export const getStaticProps = async ({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) => {
   const markdownWithMeta = fs.readFileSync(
     path.join("posts", slug + ".mdx"),
     "utf-8"
@@ -37,7 +41,14 @@ export const getStaticProps = async ({ params: { slug } }) => {
   };
 };
 
-const Post = ({ frontMatter: { title }, mdxSource }) => {
+interface IPost {
+  frontMatter: {
+    title: string;
+  };
+  mdxSource: any;
+}
+
+const Post = ({ frontMatter: { title }, mdxSource }: IPost) => {
   return (
     <>
       <Head>

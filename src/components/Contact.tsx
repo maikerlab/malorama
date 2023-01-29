@@ -6,6 +6,7 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import Link from "next/link";
+import contact from "@assets/contact.jpg";
 
 const Contact = () => {
   return (
@@ -19,10 +20,12 @@ const Contact = () => {
           <div className="col-span-3 h-full w-full rounded-xl p-4 shadow-xl shadow-gray-400 lg:col-span-2">
             <div className="h-full lg:p-4">
               <div>
-                <img
-                  src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80"
+                <Image
+                  src={contact}
+                  alt="Contact"
                   className="rounded-xl duration-300 ease-in hover:scale-105"
-                  alt="/"
+                  width={500}
+                  height={500}
                 />
               </div>
               <div>
@@ -31,7 +34,9 @@ const Contact = () => {
                 <p>Computer Science for Technical Systems</p>
               </div>
               <div>
-                <p className="pt-8 uppercase text-primary">Let's connect!</p>
+                <p className="pt-8 uppercase text-primary">
+                  Let&apos;s connect!
+                </p>
                 <div className="flex items-center justify-between py-4">
                   <Link
                     href="https://www.linkedin.com/in/maik-lorenz-5b7780bb/"
