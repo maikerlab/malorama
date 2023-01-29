@@ -27,29 +27,35 @@ const Contact = () => {
               </div>
               <div>
                 <h2 className="py-2">Maik Lorenz</h2>
-                <p>Software Developer</p>
-                <p className="py-4">
-                  I am available for freelance or part-time positions.
-                </p>
+                <p>Student (Bachelor of Science)</p>
+                <p>Computer Science for Technical Systems</p>
               </div>
               <div>
-                <p className="pt-8 uppercase">Connect with me!</p>
+                <p className="pt-8 uppercase text-primary">Let's connect!</p>
                 <div className="flex items-center justify-between py-4">
-                  <div className="cursor-pointer rounded-full p-6 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
-                    <FaLinkedin />
-                  </div>
-                  <div className="cursor-pointer rounded-full p-6 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
-                    <FaGithub />
-                  </div>
-                  <div className="cursor-pointer rounded-full p-6 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
-                    <FaTwitter />
-                  </div>
-                  <div className="cursor-pointer rounded-full p-6 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
-                    <AiOutlineMail />
-                  </div>
-                  <div className="cursor-pointer rounded-full p-6 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
-                    <BsFillPersonLinesFill />
-                  </div>
+                  <Link
+                    href="https://www.linkedin.com/in/maik-lorenz-5b7780bb/"
+                    target="_blank"
+                  >
+                    <div className="cursor-pointer rounded-full p-4 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
+                      <FaLinkedin size={24} color="#0e76a8" />
+                    </div>
+                  </Link>
+                  <Link href="https://github.com/maikerlab" target="_blank">
+                    <div className="cursor-pointer rounded-full p-4 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
+                      <FaGithub size={24} color="#333" />
+                    </div>
+                  </Link>
+                  <Link href="https://twitter.com/malorama" target="_blank">
+                    <div className="cursor-pointer rounded-full p-4 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
+                      <FaTwitter size={24} color="#1DA1F2" />
+                    </div>
+                  </Link>
+                  <Link href="mailto:maik.lorenz@protonmail.com">
+                    <div className="cursor-pointer rounded-full p-4 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
+                      <AiOutlineMail size={24} />
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -108,7 +114,7 @@ const Contact = () => {
                     className="rounded-lg border-2 border-gray-300 p-3"
                     name="message"
                     id="message"
-                    rows={10}
+                    rows={5}
                   ></textarea>
                 </div>
                 <button className="mt-4 w-full p-4 text-gray-100">

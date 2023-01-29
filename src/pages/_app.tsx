@@ -9,7 +9,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider attribute="class">
         <main className="bg-cultured dark:bg-black">
           <Navbar />
-          <Component {...pageProps} />
+          <div className="pt-24">
+            <Component {...pageProps} />
+          </div>
         </main>
       </ThemeProvider>
     </>

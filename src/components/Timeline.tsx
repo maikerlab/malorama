@@ -39,7 +39,7 @@ const timeLineData: ITimelineEvent[] = [
   {
     date: "2007-2011",
     title: "Apprenticeship",
-    description: "Elektroniker für Geräte und Systeme",
+    description: "Electronics technician for devices and systems",
     location: "BEHA-Amprobe GmbH, Glottertal, Germany",
   },
 ];

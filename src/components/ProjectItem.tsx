@@ -24,7 +24,7 @@ const ProjectItem = ({
         height={800}
         alt="/"
       />
-      <div className="absolute top-[50%] left-[50%] hidden translate-x-[-50%] translate-y-[-50%] group-hover:block">
+      <div className="absolute top-[50%] left-[50%] hidden w-full translate-x-[-50%] translate-y-[-50%] p-5 group-hover:block">
         <h3 className="text-center text-2xl tracking-wider text-white">
           {title}
         </h3>

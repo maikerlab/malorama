@@ -6,6 +6,7 @@ import matter from "gray-matter";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { GetStaticPaths } from "next";
 import styles from "../../styles/Post.module.css";
+import Head from "next/head";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const files = fs.readdirSync(path.join("posts"));
@@ -38,12 +39,17 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
 const Post = ({ frontMatter: { title }, mdxSource }) => {
   return (
-    <div className="container">
-      <div className={styles.post}>
-        <h1 className="my-8 font-bold">{title}</h1>
-        <MDXRemote {...mdxSource} components={{ SyntaxHighlighter }} />
+    <>
+      <Head>
+        <title>{title} | malorama</title>
+      </Head>
+      <div className="container">
+        <div className={styles.post}>
+          <h1 className="my-8 font-bold">{title}</h1>
+          <MDXRemote {...mdxSource} components={{ SyntaxHighlighter }} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

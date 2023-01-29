@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import ProjectItem from "./ProjectItem";
 import test from "@assets/test.jpg";
+import mysite from "@assets/my_website.png";
+import raspi from "@assets/raspberry_pi.jpg";
 
 const Projects = () => {
   return (
@@ -16,13 +18,13 @@ const Projects = () => {
           <ProjectItem
             title="My Website"
             description="I developed this website you see here with Next.js and TypeScript"
-            backgroundImg={test}
+            backgroundImg={mysite}
             projectUrl="/project1"
           />
           <ProjectItem
-            title="BTC Point of Sale"
-            description="SmartHome meets Bitcoin"
-            backgroundImg={test}
+            title="Smart Home"
+            description="Control my SmartHome devices, using Open-Source software and Raspberry Pi"
+            backgroundImg={raspi}
             projectUrl="/project1"
           />
         </div>
