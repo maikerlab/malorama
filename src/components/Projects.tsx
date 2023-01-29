@@ -12,10 +12,10 @@ const Projects = () => {
           Projects
         </p>
         <h2 className="py-4">What I've built</h2>
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-3">
           <ProjectItem
-            title="Test Project"
-            description="Example project I have built"
+            title="My Website"
+            description="I developed this website you see here with Next.js and TypeScript"
             backgroundImg={test}
             projectUrl="/project1"
           />
@@ -23,13 +23,7 @@ const Projects = () => {
             title="BTC Point of Sale"
             description="SmartHome meets Bitcoin"
             backgroundImg={test}
-            projectUrl="/testprj"
-          />
-          <ProjectItem
-            title="REST API"
-            description="An API for getting data from a database"
-            backgroundImg={test}
-            projectUrl="/testprj"
+            projectUrl="/project1"
           />
         </div>
       </div>
