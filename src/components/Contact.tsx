@@ -37,7 +37,7 @@ const Contact = () => {
                 <p className="pt-8 uppercase text-primary">
                   Let&apos;s connect!
                 </p>
-                <div className="flex items-center justify-between py-4">
+                <div className="flex items-center justify-evenly py-4">
                   <Link
                     href="https://www.linkedin.com/in/maik-lorenz-5b7780bb/"
                     target="_blank"
@@ -51,11 +51,11 @@ const Contact = () => {
                       <FaGithub size={24} color="#333" />
                     </div>
                   </Link>
-                  <Link href="https://twitter.com/malorama" target="_blank">
+                  {/*                   <Link href="https://twitter.com/malorama" target="_blank">
                     <div className="cursor-pointer rounded-full p-4 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
                       <FaTwitter size={24} color="#1DA1F2" />
                     </div>
-                  </Link>
+                  </Link> */}
                   <Link href="mailto:maik.lorenz@protonmail.com">
                     <div className="cursor-pointer rounded-full p-4 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
                       <AiOutlineMail size={24} />

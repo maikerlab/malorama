@@ -126,22 +126,30 @@ const Navbar = () => {
               <p className="uppercase tracking-widest text-primary">
                 Let&apos;s connect!
               </p>
-              <div className="my-4 flex w-full items-center justify-between sm:w-[80%]">
-                <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
-                  <FaLinkedin />
-                </div>
-                <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
-                  <FaGithub />
-                </div>
-                <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
-                  <FaTwitter />
-                </div>
-                <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
-                  <AiOutlineMail />
-                </div>
-                <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
-                  <BsFillPersonLinesFill />
-                </div>
+              <div className="my-4 flex w-full items-center justify-evenly sm:w-[80%]">
+                <Link
+                  href="https://www.linkedin.com/in/maik-lorenz-5b7780bb/"
+                  target="_blank"
+                >
+                  <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
+                    <FaLinkedin size={24} color="#0e76a8" />
+                  </div>
+                </Link>
+                <Link href="https://github.com/maikerlab" target="_blank">
+                  <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
+                    <FaGithub color="#333" />
+                  </div>
+                </Link>
+                {/*                   <Link href="https://twitter.com/malorama" target="_blank">
+                    <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
+                      <FaTwitter size={24} color="#1DA1F2" />
+                    </div>
+                  </Link> */}
+                <Link href="mailto:maik.lorenz@protonmail.com">
+                  <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
+                    <AiOutlineMail size={24} />
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
