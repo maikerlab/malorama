@@ -29,6 +29,10 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Blog = ({ posts }: { posts: IPostMeta[] }) => {
+  posts = posts.sort((a, b) => {
+    return new Date(a.frontMatter.date) < new Date(b.frontMatter.date) ? 1 : -1;
+  });
+
   return (
     <>
       <Head>

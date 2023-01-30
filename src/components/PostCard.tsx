@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/dist/client/link";
 import { AiOutlineArrowRight, AiOutlineTags } from "react-icons/ai";
+import { BsCalendar3 } from "react-icons/bs";
 
 export interface IPostMeta {
   frontMatter: {
@@ -48,7 +49,10 @@ export default function PostCard({
             </span>
           ))}
         </span>
-        <h2 className="mb-1 text-base font-medium text-indigo-300">{date}</h2>
+        <span className="inline-flex items-center text-indigo-300">
+          <BsCalendar3 className="mr-2 h-3 w-3" />
+          <h2 className="mb-1 text-base font-medium">{date}</h2>
+        </span>
         <h1 className="mb-3 text-2xl font-semibold">{title}</h1>
         <p className="mb-3 flex-1 leading-relaxed">{description}</p>
         <div className="flex flex-wrap items-center">
