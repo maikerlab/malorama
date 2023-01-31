@@ -8,10 +8,10 @@ import ThemeSwitch from "./ThemeSwitch";
 
 const navItems = [
   ["Home", "/#main"],
+  ["Blog", "/#blog"],
+  ["Projects", "/#projects"],
   ["About", "/#about"],
   ["Skills", "/#skills"],
-  ["Projects", "/#projects"],
-  ["Blog", "/blog"],
 ];
 
 const Navbar = () => {
