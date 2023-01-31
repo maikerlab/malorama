@@ -76,7 +76,7 @@ export default function Main() {
                     size={20}
                   />
                   <span className="ml-2">
-                    "Wait... who is Maik?" - find out more about me{" "}
+                    &quot;Wait... who is Maik?&quot; - find out more about me{" "}
                     <Link
                       href="#about"
                       className="font-semibold text-primary"
