@@ -31,7 +31,7 @@ const About = () => {
               Hamburg, Germany.
             </p>
           </div>
-          <div className="m-auto flex h-auto w-80 items-center justify-center rounded-xl bg-surface p-3 shadow-xl shadow-gray-400 duration-300 ease-in hover:scale-105">
+          <div className="m-auto flex h-auto w-80 items-center justify-center rounded-xl bg-surface p-3 shadow-lg shadow-shades duration-300 ease-in hover:scale-105">
             <Image
               src={maik}
               width={800}

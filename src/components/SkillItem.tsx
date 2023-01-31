@@ -8,7 +8,7 @@ interface ISkillItem {
 
 const SkillItem = ({ title, details, icon }: ISkillItem) => {
   return (
-    <div className="group h-full rounded-xl bg-surface p-5 shadow-xl duration-300 ease-in hover:scale-105">
+    <div className="group h-full rounded-xl bg-surface p-5 shadow-lg shadow-shades duration-300 ease-in hover:scale-105">
       <div className="grid h-full grid-cols-2 items-center justify-center gap-4 group-hover:opacity-0">
         <div className="m-auto">{icon}</div>
         <div className="flex flex-col items-center justify-center">

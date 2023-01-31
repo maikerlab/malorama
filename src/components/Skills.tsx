@@ -55,7 +55,7 @@ const Skills = () => {
         <p className="text-xl uppercase tracking-widest text-primary">Skills</p>
         <h2 className="py-1">What I can do</h2>
         <p>Hover about the items to learn more.</p>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-4 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <SkillItem
             title="Python"
             details="I can do full-stack web-apps and REST-API's with Django. Also did many Data-Science projects during my study"

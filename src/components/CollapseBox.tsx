@@ -16,7 +16,7 @@ const CollapseBox = ({ title, content, icon }: IBoxContent) => {
   };
 
   return (
-    <div className="my-3 w-full rounded-xl shadow-lg">
+    <div className="my-3 w-full rounded-xl shadow-lg shadow-shades">
       <div
         className={`${
           expanded ? "rounded-b-none" : "h-full rounded-b-xl"

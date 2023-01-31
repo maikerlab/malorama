@@ -50,7 +50,7 @@ const Navbar = () => {
   return (
     <div
       className={`fixed ${
-        shadow ? "shadow-xl" : ""
+        shadow ? "shadow-xl shadow-shades" : ""
       } fixed z-[100] w-full py-5 px-4 bg-${navBg}`}
     >
       <div className="flex h-full w-full items-center justify-between px-2 2xl:px-16">
@@ -96,7 +96,7 @@ const Navbar = () => {
               </Link>
               <div
                 onClick={handleNav}
-                className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400"
+                className="cursor-pointer rounded-full p-3 shadow-lg shadow-shades"
               >
                 <AiOutlineClose />
               </div>
@@ -131,22 +131,17 @@ const Navbar = () => {
                   href="https://www.linkedin.com/in/maik-lorenz-5b7780bb/"
                   target="_blank"
                 >
-                  <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
+                  <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-shades duration-300 ease-in hover:scale-105">
                     <FaLinkedin size={24} color="#0e76a8" />
                   </div>
                 </Link>
                 <Link href="https://github.com/maikerlab" target="_blank">
-                  <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
+                  <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-shades duration-300 ease-in hover:scale-105">
                     <FaGithub color="#333" />
                   </div>
                 </Link>
-                {/*                   <Link href="https://twitter.com/malorama" target="_blank">
-                    <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
-                      <FaTwitter size={24} color="#1DA1F2" />
-                    </div>
-                  </Link> */}
                 <Link href="mailto:maik.lorenz@protonmail.com">
-                  <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-105">
+                  <div className="cursor-pointer rounded-full p-3 shadow-lg shadow-shades duration-300 ease-in hover:scale-105">
                     <AiOutlineMail size={24} />
                   </div>
                 </Link>

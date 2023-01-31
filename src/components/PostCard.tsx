@@ -25,7 +25,7 @@ export default function PostCard({
   post: IPostMeta;
 }) {
   return (
-    <div className="group flex h-full w-full flex-col overflow-hidden rounded-xl border-2 border-gray-200 border-opacity-60 bg-surface text-skin-on-surface shadow-xl">
+    <div className="group flex h-full w-full flex-col overflow-hidden rounded-xl border-2 border-gray-200 border-opacity-60 bg-surface text-skin-on-surface shadow-xl shadow-shades">
       <div className="overflow-hidden">
         <Image
           src={`/assets/blog/${image}`}
@@ -35,7 +35,7 @@ export default function PostCard({
           height={300}
         />
       </div>
-      <div className="flex flex-1 flex-col p-6 transition duration-300 ease-in group-hover:bg-gray-800 group-hover:text-white dark:group-hover:bg-gray-700">
+      <div className="flex flex-1 flex-col p-6 transition duration-300 ease-in group-hover:bg-gray-600 group-hover:text-white dark:group-hover:bg-gray-900">
         <span className="mb-2 inline-flex text-sm leading-none text-gray-400">
           <AiOutlineTags className="mr-2 h-4 w-4" />
           {tags.map((tag: string, idx) => (

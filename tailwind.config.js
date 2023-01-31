@@ -14,6 +14,7 @@ module.exports = {
         "secondary-variant": "var(--color-secondary-variant)",
         background: "var(--color-background)",
         surface: "var(--color-surface)",
+        shades: "var(--color-shadow)",
         error: "var(--color-error)",
       },
       transitionProperty: {

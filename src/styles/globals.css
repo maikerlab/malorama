@@ -11,6 +11,7 @@
     --color-background: #ffffff;
     --color-surface: #ecf0f3;
     --color-error: #b00020;
+    --color-shadow: theme(colors.gray.400);
 
     --color-text-on-primary: #ffffff;
     --color-text-on-secondary: #000000;
@@ -24,9 +25,10 @@
     --color-primary-variant: #009300;
     --color-secondary: #f900c3;
     --color-secondary-variant: #c200a1;
-    --color-background: #272727;
-    --color-surface: #0d1f2d;
+    --color-background: #000;
+    --color-surface: #272727;
     --color-error: #b00020;
+    --color-shadow: theme(colors.gray.800);
 
     --color-text-on-primary: #000;
     --color-text-on-secondary: #ffffff;
@@ -65,7 +67,7 @@
   }
 
   button {
-    @apply rounded-full bg-gradient-to-r from-primary to-primary-variant py-2 px-3 uppercase text-skin-on-primary shadow-lg shadow-gray-400 duration-300 hover:scale-105;
+    @apply rounded-full bg-gradient-to-r from-primary to-primary-variant py-2 px-3 font-semibold uppercase text-skin-on-primary shadow-lg shadow-shades duration-300 hover:scale-105;
   }
 }
 

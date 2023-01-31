@@ -16,7 +16,7 @@ const ProjectItem = ({
   projectUrl,
 }: IProjectProps) => {
   return (
-    <div className="group relative flex h-auto w-full items-center justify-center rounded-xl bg-surface from-primary to-primary-variant p-3 text-skin-on-primary shadow-xl shadow-gray-400 hover:bg-gradient-to-r">
+    <div className="group relative flex h-auto w-full items-center justify-center rounded-xl bg-surface from-primary to-primary-variant p-3 text-skin-on-primary shadow-xl shadow-shades hover:bg-gradient-to-r">
       <Image
         className="rounded-xl group-hover:opacity-10"
         src={backgroundImg}

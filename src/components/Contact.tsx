@@ -18,7 +18,7 @@ const Contact = () => {
         <h2 className="py-4">Get in touch</h2>
         <div className="grid gap-8 lg:grid-cols-5">
           {/* LEFT SIDE */}
-          <div className="col-span-3 h-full w-full rounded-xl bg-surface p-4 text-skin-on-surface shadow-xl shadow-gray-400 lg:col-span-2">
+          <div className="col-span-3 h-full w-full rounded-xl bg-surface p-4 text-skin-on-surface shadow-xl shadow-shades lg:col-span-2">
             <div className="h-full lg:p-4">
               <div>
                 <Image
@@ -43,19 +43,19 @@ const Contact = () => {
                     href="https://www.linkedin.com/in/maik-lorenz-5b7780bb/"
                     target="_blank"
                   >
-                    <div className="cursor-pointer rounded-full bg-primary p-4 text-skin-on-primary shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
+                    <div className="cursor-pointer rounded-full bg-primary p-4 text-skin-on-primary shadow-lg shadow-shades duration-300 ease-in hover:scale-110">
                       {/* color="#0e76a8" */}
                       <FaLinkedin size={24} />
                     </div>
                   </Link>
                   <Link href="https://github.com/maikerlab" target="_blank">
-                    <div className="cursor-pointer rounded-full bg-primary p-4 text-skin-on-primary shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
+                    <div className="cursor-pointer rounded-full bg-primary p-4 text-skin-on-primary shadow-lg shadow-shades duration-300 ease-in hover:scale-110">
                       {/* color="#333" */}
                       <FaGithub size={24} />
                     </div>
                   </Link>
                   <Link href="mailto:maik.lorenz@protonmail.com">
-                    <div className="cursor-pointer rounded-full bg-primary p-4 text-skin-on-primary shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
+                    <div className="cursor-pointer rounded-full bg-primary p-4 text-skin-on-primary shadow-lg shadow-shades duration-300 ease-in hover:scale-110">
                       <AiOutlineMail size={24} />
                     </div>
                   </Link>
@@ -64,7 +64,7 @@ const Contact = () => {
             </div>
           </div>
           {/* right side */}
-          <div className="col-span-3 h-auto w-full rounded-xl bg-surface text-skin-on-surface shadow-xl shadow-gray-400 lg:p-4">
+          <div className="col-span-3 h-auto w-full rounded-xl bg-surface text-skin-on-surface shadow-xl shadow-shades lg:p-4">
             <div className="p-4">
               <form>
                 <div className="grid w-full gap-4 py-2 md:grid-cols-2">
@@ -127,7 +127,7 @@ const Contact = () => {
         </div>
         <div className="flex justify-center py-12">
           <Link href="#">
-            <div className="cursor-pointer rounded-full bg-primary p-4 text-skin-on-primary shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110">
+            <div className="cursor-pointer rounded-full bg-primary p-4 text-skin-on-primary shadow-lg shadow-shades duration-300 ease-in hover:scale-110">
               <HiOutlineChevronDoubleUp size={30} className="m-auto" />
             </div>
           </Link>

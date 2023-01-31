@@ -33,7 +33,7 @@ const project1 = () => {
           <button className="mt-4 mr-8 px-8 py-2">Demo</button>
           <button className="mt-4 px-8 py-2">Code</button>
         </div>
-        <div className="col-span-4 rounded-xl bg-surface p-4 shadow-xl shadow-gray-400 md:col-span-1">
+        <div className="col-span-4 rounded-xl bg-surface p-4 shadow-xl shadow-shades md:col-span-1">
           <div className="p-2">
             <p className="pb-2 text-center font-bold">Technologies</p>
             <div className="grid grid-cols-3 md:grid-cols-1">
