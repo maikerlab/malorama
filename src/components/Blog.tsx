@@ -1,5 +1,6 @@
 import React from "react";
 import PostCard, { IPostMeta } from "./PostCard";
+import PostCardRow from "./PostCardRow";
 
 const Blog = ({ posts }: { posts: IPostMeta[] }) => {
   posts = posts.sort((a, b) => {
@@ -9,12 +10,13 @@ const Blog = ({ posts }: { posts: IPostMeta[] }) => {
   return (
     <div id="blog" className="mx-auto h-screen max-w-[1240px] px-4">
       <p className="text-xl uppercase tracking-widest text-primary">Blog</p>
-      <h2 className="py-4 text-3xl">Latest Blog Posts</h2>
+      <h2 className="py-4 text-3xl">My Latest Blog Posts</h2>
       <section className="flex items-center py-2 text-gray-600">
         <div className="container mx-auto py-2">
           <div className="m-4 grid grid-cols-1 gap-8 lg:grid-cols-2">
             {posts.map((post: IPostMeta, index) => {
-              return <PostCard post={post} key={index} />;
+              // return <PostCard post={post} key={index} />;
+              return <PostCardRow post={post} key={index} />;
             })}
           </div>
         </div>
