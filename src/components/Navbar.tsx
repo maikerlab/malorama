@@ -18,17 +18,17 @@ const navItems = [
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
-  const [navBg, setNavBg] = useState("cultured");
-  const [linkColor, setLinkColor] = useState("gunmetal");
+  const [navBg, setNavBg] = useState("background");
+  const [linkColor, setLinkColor] = useState("skin-on-background");
   const router = useRouter();
 
   useEffect(() => {
     if (router.asPath.search("/projects") === 0) {
       setNavBg("transparent");
-      setLinkColor("cultured");
+      setLinkColor("skin-on-background");
     } else {
-      setNavBg("cultured");
-      setLinkColor("gunmetal");
+      setNavBg("background");
+      setLinkColor("skin-on-background");
     }
   }, [router]);
 
@@ -51,12 +51,12 @@ const Navbar = () => {
     <div
       className={`fixed ${
         shadow ? "shadow-xl" : ""
-      } fixed z-[100] w-full py-5 px-4 bg-${navBg} dark:bg-inherit`}
+      } fixed z-[100] w-full py-5 px-4 bg-${navBg}`}
     >
       <div className="flex h-full w-full items-center justify-between px-2 2xl:px-16">
         <div className="flex gap-8">
           <h1
-            className={`my-auto font-monospace text-3xl text-primary dark:text-white lg:text-4xl`}
+            className={`my-auto font-monospace text-3xl text-primary lg:text-4xl`}
           >
             <Link href="/">malorama</Link>
           </h1>
@@ -66,7 +66,7 @@ const Navbar = () => {
           <ul className={`hidden md:flex text-${linkColor}`}>
             {navItems.map(([title, url], idx) => (
               <Link href={url} key={idx} scroll={false}>
-                <li className="text-md ml-10 border-b-gunmetal uppercase hover:border-b dark:border-b-white dark:text-white">
+                <li className="text-md border-b-edges ml-10 uppercase hover:border-b">
                   {title}
                 </li>
               </Link>
@@ -85,7 +85,7 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? "fixed left-0 top-0 h-screen w-[75%] bg-cultured p-10 duration-500 ease-in sm:w-[60%] md:w-[45%]"
+              ? "bg-cultured fixed left-0 top-0 h-screen w-[75%] p-10 duration-500 ease-in sm:w-[60%] md:w-[45%]"
               : "fixed -left-full top-0 p-10 duration-500 ease-in"
           }
         >

@@ -19,7 +19,7 @@ export default function ThemeSwitch() {
       aria-label="Toggle Dark Mode"
       type="button"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="h-12 w-12 cursor-pointer rounded-full bg-cultured p-2 text-center text-black shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110"
+      className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-primary p-2 text-skin-on-primary shadow-lg shadow-gray-400 duration-300 ease-in hover:scale-110"
     >
       {theme === "dark" ? (
         <MdLightMode size={25} />

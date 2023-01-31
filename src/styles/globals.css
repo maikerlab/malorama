@@ -3,8 +3,40 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-primary: #0b52a9;
+    --color-primary-variant: #00a5ff;
+    --color-secondary: #84054a;
+    --color-secondary-variant: ##d3115b;
+    --color-background: #ffffff;
+    --color-surface: #ecf0f3;
+    --color-error: #b00020;
+
+    --color-text-on-primary: #ffffff;
+    --color-text-on-secondary: #000000;
+    --color-text-on-background: #000000;
+    --color-text-on-surface: #000000;
+    --color-text-on-error: #ffffff;
+  }
+
+  html.dark {
+    --color-primary: #00f935;
+    --color-primary-variant: #009300;
+    --color-secondary: #f900c3;
+    --color-secondary-variant: #c200a1;
+    --color-background: #272727;
+    --color-surface: #0d1f2d;
+    --color-error: #b00020;
+
+    --color-text-on-primary: #000;
+    --color-text-on-secondary: #ffffff;
+    --color-text-on-background: #ffffff;
+    --color-text-on-surface: #ffffff;
+    --color-text-on-error: #ffffff;
+  }
+
   body {
-    @apply bg-cultured tracking-wide text-gunmetal dark:bg-black dark:text-cultured;
+    @apply bg-background tracking-wide text-skin-on-background;
   }
 
   h1,
@@ -33,7 +65,7 @@
   }
 
   button {
-    @apply rounded-xl bg-gradient-to-r from-[#5651e5] to-[#709dff] uppercase text-white shadow-xl shadow-gray-400;
+    @apply rounded-full bg-gradient-to-r from-primary to-primary-variant py-2 px-3 uppercase text-skin-on-primary shadow-lg shadow-gray-400 duration-300 hover:scale-105;
   }
 }
 

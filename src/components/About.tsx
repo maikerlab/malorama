@@ -13,10 +13,10 @@ const About = () => {
               About
             </p>
             <h2 className="py-4">Who I am</h2>
-            <p className="py-2 italic text-gray-600">
+            <p className="py-2 italic text-gray-600 dark:text-gray-300">
               {"//"} A short introduction...
             </p>
-            <p className="py-2 text-gray-600">
+            <p className="py-2 text-gray-600 dark:text-gray-200">
               Since I was a child, I always was interested in technology,
               especially everything that has to do with electronics and makes
               our life &quot;smarter&quot;. In 2007, I started an apprenticeship
@@ -31,7 +31,7 @@ const About = () => {
               Hamburg, Germany.
             </p>
           </div>
-          <div className="m-auto flex h-auto w-80 items-center justify-center rounded-xl bg-gunmetal/80 p-4 shadow-xl shadow-gray-400 duration-300 ease-in hover:scale-105">
+          <div className="m-auto flex h-auto w-80 items-center justify-center rounded-xl bg-surface p-3 shadow-xl shadow-gray-400 duration-300 ease-in hover:scale-105">
             <Image
               src={maik}
               width={800}

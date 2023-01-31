@@ -47,14 +47,12 @@ const timeLineData: ITimelineEvent[] = [
 const Timeline = () => {
   return (
     <div>
-      <p className="text-xl uppercase tracking-widest text-primary ">
-        Timeline
-      </p>
+      <p className="text-xl uppercase tracking-widest text-primary">Timeline</p>
       <h2 className="py-4">What I already did in my career</h2>
-      <ol className="relative border-l border-gray-200 dark:border-gray-700">
+      <ol className="relative border-l border-gray-200 dark:border-gray-100">
         {timeLineData.map((ev: ITimelineEvent, idx) => (
           <li className="mb-10 ml-4" key={idx}>
-            <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-300 dark:border-gray-900 dark:bg-gray-700"></div>
+            <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border bg-gray-300 dark:border-white dark:bg-gray-200"></div>
             <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
               {ev.date}
             </time>
@@ -62,7 +60,7 @@ const Timeline = () => {
               {ev.title}
             </h3>
             <span className="text-xs text-gray-500">{ev.location}</span>
-            <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+            <p className="text-skin-light mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
               {ev.description}
             </p>
           </li>
