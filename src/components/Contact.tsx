@@ -7,6 +7,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import Link from "next/link";
 import contact from "@assets/contact.jpg";
+import maik from "@assets/maik.jpg";
 
 const Contact = () => {
   return (
@@ -20,13 +21,13 @@ const Contact = () => {
           {/* LEFT SIDE */}
           <div className="col-span-3 h-full w-full rounded-xl bg-surface p-4 text-skin-on-surface shadow-xl shadow-shades lg:col-span-2">
             <div className="h-full lg:p-4">
-              <div>
+              <div className="p-2">
                 <Image
-                  src={contact}
-                  alt="Contact"
-                  className="rounded-xl duration-300 ease-in hover:scale-105"
+                  src={maik}
                   width={500}
                   height={500}
+                  alt="Contact me"
+                  className="rounded-xl duration-300 ease-in hover:scale-105"
                 />
               </div>
               <div>
@@ -64,7 +65,12 @@ const Contact = () => {
             </div>
           </div>
           {/* right side */}
-          <div className="col-span-3 h-auto w-full rounded-xl bg-surface text-skin-on-surface shadow-xl shadow-shades lg:p-4">
+          <div className="relative col-span-3 h-auto w-full rounded-xl bg-surface text-skin-on-surface shadow-xl shadow-shades lg:p-4">
+            <div className="absolute top-0 left-0 flex h-full w-full flex-col justify-center rounded-xl bg-black/30 text-center dark:bg-black/80">
+              <h2 className="text-lg lg:text-3xl">
+                Under Construction, sorry!
+              </h2>
+            </div>
             <div className="p-4">
               <form>
                 <div className="grid w-full gap-4 py-2 md:grid-cols-2">
