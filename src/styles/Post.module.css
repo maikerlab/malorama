@@ -1,9 +1,9 @@
 .post {
-  @apply container mx-auto my-12 w-[90%] md:w-[60%];
+  @apply container mx-auto my-12 w-[90%] bg-surface p-4 md:w-[60%];
 }
 
 .post p {
-  @apply my-4 leading-7;
+  @apply my-1 leading-7;
 }
 
 .post img {
@@ -26,11 +26,18 @@
 }
 
 .post h3 {
-  @apply text-xl;
-  @apply mt-6;
+  @apply mt-6 border-b-2 border-primary pb-2 text-xl;
 }
 
 .post h4 {
   @apply text-lg;
   @apply mt-6;
+}
+
+.post code {
+  @apply p-2 font-mono text-sm;
+}
+
+.post div {
+  @apply my-1;
 }

@@ -21,16 +21,20 @@ Just use "hashtags" (e. g. `###`) to add (sub-)headings in your blog post like i
 
 We can show code snippets by using the `SyntaxHighlighter` component.
 
-<SyntaxHighlighter language="javascript">
-  {`
+<div>
+  <CodeHighlight
+    language="javascript"
+    codeString={`
     const doStuff = () => {
       return console.log('hey')
     }
   `}
-</SyntaxHighlighter>
+  />
+</div>
 
-<SyntaxHighlighter language="kotlin">
-  {`
+<CodeHighlight
+  language="kotlin"
+  codeString={`
     fun getMenu() {
         val menus = await http.get('localhost:8080')
         if(menus.isEmpty) {
@@ -43,7 +47,7 @@ We can show code snippets by using the `SyntaxHighlighter` component.
             }
     }
   `}
-</SyntaxHighlighter>
+/>
 
 We can also use simple code blocks by including code between 3 quotation marks.
 
@@ -56,4 +60,9 @@ We can also use simple code blocks by including code between 3 quotation marks.
 
 ### Using React components
 
-<div>Here, I'm using a `Button` component inside my Markdown file:</div>
+I have created a component named "Expandable", where I used a [Disclosure element from Headless UI](https://headlessui.com/react/disclosure) and styled it to fit my needs.
+Now I can use it inside my MDX files like this:
+
+`<Expandable title="Hello" content="World" />`
+
+<Expandable title="Hello" content="World" />

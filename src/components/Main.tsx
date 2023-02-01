@@ -110,7 +110,7 @@ export default function Main() {
               </li>
             </ul>
           </p>
-          <button className="mt-4 p-4">
+          <button className="btn mt-4 p-4">
             <Link href="#contact">Contact me!</Link>
           </button>
         </div>

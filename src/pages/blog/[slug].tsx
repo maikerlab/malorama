@@ -7,6 +7,8 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { GetStaticPaths } from "next";
 import styles from "@styles/Post.module.css";
 import Head from "next/head";
+import Expandable from "@/components/Expandable";
+import CodeHighlight from "@/components/CodeHighlight";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const files = fs.readdirSync(path.join("posts"));
@@ -57,7 +59,10 @@ const Post = ({ frontMatter: { title }, mdxSource }: IPost) => {
       <div className="container">
         <div className={styles.post}>
           <h1 className="my-8 font-bold">{title}</h1>
-          <MDXRemote {...mdxSource} components={{ SyntaxHighlighter }} />
+          <MDXRemote
+            {...mdxSource}
+            components={{ SyntaxHighlighter, CodeHighlight, Expandable }}
+          />
         </div>
       </div>
     </>
