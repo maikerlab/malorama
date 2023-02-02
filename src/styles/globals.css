@@ -71,6 +71,10 @@
   .btn {
     @apply rounded-full bg-gradient-to-r from-primary to-primary-variant py-2 px-3 font-semibold uppercase text-skin-on-primary shadow-lg shadow-shades duration-300 hover:scale-105;
   }
+
+  .toast {
+    @apply rounded-md border-2 border-gray-500 bg-surface p-2;
+  }
 }
 
 @font-face {
