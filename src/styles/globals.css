@@ -4,37 +4,37 @@
 
 @layer base {
   :root {
-    --color-primary: #0b52a9;
-    --color-primary-variant: #00a5ff;
-    --color-secondary: #84054a;
-    --color-secondary-variant: ##d3115b;
-    --color-background: #ffffff;
-    --color-surface: #ecf0f3;
-    --color-error: #b00020;
-    --color-shadow: theme(colors.gray.400);
+    --color-primary: 86 119 252;
+    --color-primary-variant: 0 76 200;
+    --color-secondary: 255 160 0;
+    --color-secondary-variant: 198 113 0;
+    --color-background: 255 255 255;
+    --color-surface: 240 240 240;
+    --color-error: 176 0 32;
+    --color-shadow: 156 163 175;
 
-    --color-text-on-primary: #ffffff;
-    --color-text-on-secondary: #000000;
-    --color-text-on-background: #000000;
-    --color-text-on-surface: #000000;
-    --color-text-on-error: #ffffff;
+    --color-text-on-primary: 255 255 255;
+    --color-text-on-secondary: 0 0 0;
+    --color-text-on-background: 0 0 0;
+    --color-text-on-surface: 0 0 0;
+    --color-text-on-error: 255 255 255;
   }
 
   html.dark {
-    --color-primary: #00f935;
-    --color-primary-variant: #009300;
-    --color-secondary: #f900c3;
-    --color-secondary-variant: #c200a1;
-    --color-background: #000;
-    --color-surface: #272727;
-    --color-error: #b00020;
-    --color-shadow: theme(colors.gray.800);
+    --color-primary: 178 255 89;
+    --color-primary-variant: 126 203 32;
+    --color-secondary: 224 64 251;
+    --color-secondary-variant: 170 0 199;
+    --color-background: 0 0 0;
+    --color-surface: 39 39 39;
+    --color-error: 176 0 32;
+    --color-shadow: 31 41 55;
 
-    --color-text-on-primary: #000;
-    --color-text-on-secondary: #ffffff;
-    --color-text-on-background: #ffffff;
-    --color-text-on-surface: #ffffff;
-    --color-text-on-error: #ffffff;
+    --color-text-on-primary: 0 0 0;
+    --color-text-on-secondary: 255 255 255;
+    --color-text-on-background: 255 255 255;
+    --color-text-on-surface: 255 255 255;
+    --color-text-on-error: 255 255 255;
   }
 
   body {

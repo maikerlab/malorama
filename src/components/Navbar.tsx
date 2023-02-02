@@ -61,11 +61,16 @@ const Navbar = () => {
         <div>
           <ul className={`hidden text-skin-on-background md:flex`}>
             {navItems.map(([title, url], idx) => (
-              <Link href={url} key={idx} scroll={false}>
-                <li className="text-md border-b-edges ml-10 uppercase hover:border-b">
+              <li className="text-md border-b-edges ml-10 uppercase hover:border-b">
+                <Link
+                  href={url}
+                  key={idx}
+                  scroll={false}
+                  className="hover:border-b-2 hover:border-primary"
+                >
                   {title}
-                </li>
-              </Link>
+                </Link>
+              </li>
             ))}
           </ul>
           <div onClick={handleNav} className="cursor-pointer md:hidden">
@@ -73,17 +78,18 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      {/* Side Navigation */}
       <div
         className={
           nav ? "fixed left-0 top-0 h-screen w-full bg-black/70 md:hidden" : ""
         }
       >
         <div
-          className={
+          className={`fixed p-10 duration-500 ease-in ${
             nav
-              ? "fixed left-0 top-0 h-screen w-[75%] bg-surface p-10 duration-500 ease-in sm:w-[60%] md:w-[45%]"
-              : "fixed -left-full top-0 p-10 duration-500 ease-in"
-          }
+              ? "left-0 top-0 h-screen w-[75%] bg-surface sm:w-[60%] md:w-[45%]"
+              : "-left-full top-0"
+          }`}
         >
           <div>
             <div className="flex w-full items-center justify-between">
@@ -94,7 +100,7 @@ const Navbar = () => {
               </Link>
               <div
                 onClick={handleNav}
-                className="cursor-pointer rounded-full p-3 shadow-lg shadow-shades"
+                className="cursor-pointer rounded-full p-3 shadow-lg shadow-shades dark:border-2"
               >
                 <AiOutlineClose />
               </div>
@@ -106,14 +112,17 @@ const Navbar = () => {
           <div className="flex flex-col py-4">
             <ul className="uppercase">
               {navItems.map(([title, url], idx) => (
-                <Link
-                  href={url}
-                  key={idx}
-                  scroll={false}
-                  onClick={() => setNav(false)}
-                >
-                  <li className="ml-10 py-4 text-sm hover:border-b">{title}</li>
-                </Link>
+                <li className="ml-10 py-4 text-sm">
+                  <Link
+                    className="hover:border-b-2 hover:border-primary"
+                    href={url}
+                    key={idx}
+                    scroll={false}
+                    onClick={() => setNav(false)}
+                  >
+                    {title}
+                  </Link>
+                </li>
               ))}
             </ul>
             <div className="pt-20">

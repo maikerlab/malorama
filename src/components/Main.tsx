@@ -27,7 +27,7 @@ export default function Main() {
             Hi, I&apos;m <span className="text-primary">Maik</span>.
           </h1>
           <h2 className="cursor-default py-2">{headers[index]}.</h2>
-          <p className="mx-auto w-full py-4 text-start leading-8">
+          <div className="mx-auto w-full py-4 text-start leading-8">
             <ul className="mt-2 mb-3 w-full">
               <li>
                 <span className="w-fill flex rounded-lg pl-3">
@@ -109,7 +109,7 @@ export default function Main() {
                 </span>
               </li>
             </ul>
-          </p>
+          </div>
           <button className="btn mt-4 p-4">
             <Link href="#contact">Contact me!</Link>
           </button>
