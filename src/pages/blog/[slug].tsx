@@ -51,10 +51,11 @@ interface IPost {
 }
 
 const Post = ({ frontMatter: { title }, mdxSource }: IPost) => {
+  const siteTitle = title + " | malorama";
   return (
     <>
       <Head>
-        <title>{title} | malorama</title>
+        <title>{siteTitle}</title>
       </Head>
       <div className="container">
         <div className={styles.post}>
