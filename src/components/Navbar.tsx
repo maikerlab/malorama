@@ -61,10 +61,12 @@ const Navbar = () => {
         <div>
           <ul className={`hidden text-skin-on-background md:flex`}>
             {navItems.map(([title, url], idx) => (
-              <li className="text-md border-b-edges ml-10 uppercase hover:border-b">
+              <li
+                key={idx}
+                className="text-md border-b-edges ml-10 uppercase hover:border-b"
+              >
                 <Link
                   href={url}
-                  key={idx}
                   scroll={false}
                   className="hover:border-b-2 hover:border-primary"
                 >
@@ -112,11 +114,10 @@ const Navbar = () => {
           <div className="flex flex-col py-4">
             <ul className="uppercase">
               {navItems.map(([title, url], idx) => (
-                <li className="ml-10 py-4 text-sm">
+                <li key={idx} className="ml-10 py-4 text-sm">
                   <Link
                     className="hover:border-b-2 hover:border-primary"
                     href={url}
-                    key={idx}
                     scroll={false}
                     onClick={() => setNav(false)}
                   >
