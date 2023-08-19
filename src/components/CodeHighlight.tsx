@@ -31,11 +31,11 @@ const CodeHighlight = ({
           <BiCopy className="mr-1" /> Copy
         </button>
       </div>
-      <div className="rounded-xl pt-1">
+      <div className="rounded-xl">
         <SyntaxHighlighter
           language={language}
           style={darcula}
-          customStyle={{ margin: 0, padding: 0 }}
+          customStyle={{ margin: "0rem", padding: "1.2rem" }}
         >
           {codeString}
         </SyntaxHighlighter>

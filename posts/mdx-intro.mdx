@@ -26,11 +26,9 @@ With `language="javascript"`:
 <div>
   <CodeHighlight
     language="javascript"
-    codeString={`
-    const doStuff = () => {
-      console.log('hey');
-    }
-  `}
+    codeString={`const doStuff = () => {
+  console.log('hey');
+ }`}
   />
 </div>
 
@@ -38,26 +36,22 @@ With `language="kotlin"`:
 
 <CodeHighlight
   language="kotlin"
-  codeString={`
-    fun getEvent(id: Int) {
-      val event = await http.get("localhost:8080/event/$id")
-      when(event.day) {
-          "Monday" -> Toast.makeText(this, "The event is on Monday!", Toast.LENGTH_SHORT).show()
-          else -> { finish() }
-      }
-    }
-  `}
+  codeString={`fun getEvent(id: Int) {
+  val event = await http.get("localhost:8080/event/$id")
+  when(event.day) {
+      "Monday" -> Toast.makeText(this, "The event is on Monday!", Toast.LENGTH_SHORT).show()
+      else -> { finish() }
+  }
+ }`}
 />
 
 With `language="kotlin"` and with optional caption: `caption="Rust example"`:
 
 <CodeHighlight
   language="rust"
-  codeString={`
-  fn main() {
-    println!("Hello, world!");
-  }
-  `}
+  codeString={`fn main() {
+  println!("Hello, world!");
+ }`}
   caption="Rust example"
 />
 
