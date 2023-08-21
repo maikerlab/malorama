@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import { AiOutlineArrowRight, AiOutlineMail } from "react-icons/ai";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const headers = [
   "A Software Developer",
@@ -8,7 +9,7 @@ const headers = [
   "An Electrical Engineer",
 ];
 
-export default function Main() {
+export default function Introduction() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -19,7 +20,7 @@ export default function Main() {
   }, []);
 
   return (
-    <div id="main" className="h-screen w-full py-8 text-center">
+    <div id="introduction" className="h-screen w-full py-8 text-center">
       <div className="mx-auto flex h-full w-full max-w-[1240px] items-center justify-center p-2">
         <div>
           <p className="uppercase tracking-widest">- Maik Lorenz -</p>
@@ -110,9 +111,28 @@ export default function Main() {
               </li>
             </ul>
           </div>
-          <button className="btn mt-4 p-4">
-            <Link href="#contact">Contact me!</Link>
-          </button>
+          <div className="flex items-center justify-evenly py-4">
+            <Link
+              href="https://www.linkedin.com/in/maik-lorenz-5b7780bb/"
+              target="_blank"
+            >
+              <div className="cursor-pointer rounded-full bg-primary p-4 text-skin-on-primary shadow-lg shadow-shades duration-300 ease-in hover:scale-110">
+                {/* color="#0e76a8" */}
+                <FaLinkedin size={24} />
+              </div>
+            </Link>
+            <Link href="https://github.com/maikerlab" target="_blank">
+              <div className="cursor-pointer rounded-full bg-primary p-4 text-skin-on-primary shadow-lg shadow-shades duration-300 ease-in hover:scale-110">
+                {/* color="#333" */}
+                <FaGithub size={24} />
+              </div>
+            </Link>
+            <Link href="mailto:maik.lorenz@protonmail.com">
+              <div className="cursor-pointer rounded-full bg-primary p-4 text-skin-on-primary shadow-lg shadow-shades duration-300 ease-in hover:scale-110">
+                <AiOutlineMail size={24} />
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

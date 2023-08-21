@@ -1,16 +1,13 @@
 import Head from "next/head";
-import Main from "@/components/Main";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
+import Introduction from "@/components/Introduction";
 import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
-import Timeline from "@/components/Timeline";
 import PostCard, { IPostMeta } from "@components/PostCard";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { GetStaticProps } from "next";
 import Blog from "@/components/Blog";
+import ButtonTopPage from "@/components/ButtonTopPage";
 
 export const getStaticProps: GetStaticProps = async () => {
   const files = fs.readdirSync(path.join("posts"));
@@ -38,14 +35,22 @@ export default function Home({ posts }: { posts: IPostMeta[] }) {
   return (
     <>
       <Head>
-        <title>Home | malorama</title>
+        <title>Home | maikerlab</title>
       </Head>
-      <Main />
+      <div className="">
+        <h2 className="mx-auto mb-4 w-fit cursor-default border-b-2 border-primary bg-transparent pb-2">
+          Welcome to <span className="text-primary">maikerlab</span>
+        </h2>
+        <p className="mx-auto w-1/2 text-center">
+          I call myself maikerlab, which is composed out of my first name (Maik)
+          and because I love making things (Software and Electronics). On this
+          page, I post about things I have learned and what I want to share with
+          others. I also like to tell you something about me.
+        </p>
+      </div>
       <Blog posts={posts} />
       <Projects />
-      <About />
-      <Skills />
-      <Contact />
+      <ButtonTopPage />
     </>
   );
 }

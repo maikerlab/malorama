@@ -16,7 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
           <Navbar />
           <div className="pt-24">
             <Toaster position="bottom-left" reverseOrder={false} gutter={8} />
-            <Component {...pageProps} />
+            <div className="mx-8">
+              <Component {...pageProps} />
+            </div>
           </div>
         </main>
       </ThemeProvider>

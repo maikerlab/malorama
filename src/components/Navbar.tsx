@@ -7,11 +7,8 @@ import { useRouter } from "next/router";
 import ThemeSwitch from "./ThemeSwitch";
 
 const navItems = [
-  ["Home", "/#main"],
-  ["Blog", "/#blog"],
-  ["Projects", "/#projects"],
-  ["About", "/#about"],
-  ["Skills", "/#skills"],
+  ["Home", "/"],
+  ["About", "/about#introduction"],
 ];
 
 const Navbar = () => {
@@ -54,7 +51,7 @@ const Navbar = () => {
           <h1
             className={`my-auto font-monospace text-3xl text-primary lg:text-4xl`}
           >
-            <Link href="/">malorama</Link>
+            <Link href="/">maikerlab</Link>
           </h1>
           <ThemeSwitch />
         </div>
@@ -97,7 +94,7 @@ const Navbar = () => {
             <div className="flex w-full items-center justify-between">
               <Link href="/">
                 <h1 className="font-monospace text-3xl text-primary">
-                  malorama
+                  maikerlab
                 </h1>
               </Link>
               <div

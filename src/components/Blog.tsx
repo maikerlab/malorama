@@ -8,7 +8,7 @@ const Blog = ({ posts }: { posts: IPostMeta[] }) => {
   });
 
   return (
-    <div id="blog" className="mx-auto h-screen max-w-[1240px] px-4">
+    <div id="blog" className="mx-auto max-w-[1240px] px-4">
       <p className="text-xl uppercase tracking-widest text-primary">Blog</p>
       <h2 className="py-4 text-3xl">My Latest Blog Posts</h2>
       <section className="flex items-center py-2 text-gray-600">

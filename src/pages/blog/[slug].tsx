@@ -51,7 +51,7 @@ interface IPost {
 }
 
 const Post = ({ frontMatter: { title }, mdxSource }: IPost) => {
-  const siteTitle = title + " | malorama";
+  const siteTitle = title + " | maikerlab";
   return (
     <>
       <Head>

@@ -9,7 +9,7 @@ const project1 = () => {
   return (
     <>
       <Head>
-        <title>Test Project | malorama</title>
+        <title>Test Project | maikerlab</title>
       </Head>
       <div className="w-full">
         <div className="relative h-[30vh] w-screen lg:h-[40vh]">
